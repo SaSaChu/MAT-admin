@@ -17,12 +17,67 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25b2931f6f.js" crossorigin="anonymous"></script>
 
   </head>
 
-  <body>
-  
+  <body class="admin-bg">
+    <div class="loginBox">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-4">
 
+            <div class="card overflow-hidden">
+              <div class="card-header log01 text-center">
+                <img src="images/TRA-logo.png">
+              </div>
 
+              <div class="card-body pt-0">
+
+                <form action="index.html" class="form-horizontal p-3 mt-4">
+                  <div class="mb-4">
+                    <label for="username" class="form-label text-black">使用者帳號：</label>
+                    <input type="email" class="form-control" id="username" placeholder="請輸入帳號">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="userpassword" class="form-label text-black">使用者密碼：</label>
+                    <input type="email" class="form-control" id="userpassword" placeholder="請輸入密碼">
+                    <!-- <i class="bi bi-eye-slash"></i> -->
+                  </div>
+
+                  <div class="mb-3 text-end">
+                    <a class="link-primary mt-2" href="">
+                      <i class="bi bi-lock-fill"></i> 忘記密碼
+                    </a>
+                  </div>
+
+                  <div class="mb-3 mt-4 d-grid gap-2 col-6 mx-auto">
+                    <a class="btn btn-warning text-white rounded-pill btn-lg" href="home.html">登入</a>
+                    <!-- 套程式使用
+                      <button class="btn btn-warning text-white rounded-pill btn-lg" type="button">登入</button> 
+                    -->
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+
+            <div class="mt-5 text-center text-white">
+              <small>
+                 <span class="d-none d-sm-inline-block">中文能力測驗中心 版權所有</span>
+                ©
+                <script>
+                document.write(new Date().getFullYear())
+                </script>
+                <span class="d-none d-sm-inline-block">Chinese Writing Test Center All rights reserved.</span>
+              </small>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

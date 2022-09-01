@@ -6,8 +6,8 @@
  */
 .clearfix::after { display: block; clear: both; content: ""; }
 
-.link-primary { color: #0d6efd; }
-.link-primary:hover, .link-primary:focus { color: #0a58ca; }
+.link-primary { color: #09216C; }
+.link-primary:hover, .link-primary:focus { color: #071a56; }
 
 .link-secondary { color: #6c757d; }
 .link-secondary:hover, .link-secondary:focus { color: #565e64; }
@@ -18,8 +18,8 @@
 .link-info { color: #0dcaf0; }
 .link-info:hover, .link-info:focus { color: #3dd5f3; }
 
-.link-warning { color: #ffc107; }
-.link-warning:hover, .link-warning:focus { color: #ffcd39; }
+.link-warning { color: #F39700; }
+.link-warning:hover, .link-warning:focus { color: #f5ac33; }
 
 .link-danger { color: #dc3545; }
 .link-danger:hover, .link-danger:focus { color: #b02a37; }
@@ -173,7 +173,7 @@
 
 .border-start-0 { border-left: 0 !important; }
 
-.border-primary { border-color: #0d6efd !important; }
+.border-primary { border-color: #09216C !important; }
 
 .border-secondary { border-color: #6c757d !important; }
 
@@ -181,7 +181,7 @@
 
 .border-info { border-color: #0dcaf0 !important; }
 
-.border-warning { border-color: #ffc107 !important; }
+.border-warning { border-color: #F39700 !important; }
 
 .border-danger { border-color: #dc3545 !important; }
 
@@ -575,7 +575,7 @@
 .text-break { word-wrap: break-word !important; word-break: break-word !important; }
 
 /* rtl:end:remove */
-.text-primary { color: #0d6efd !important; }
+.text-primary { color: #09216C !important; }
 
 .text-secondary { color: #6c757d !important; }
 
@@ -583,7 +583,7 @@
 
 .text-info { color: #0dcaf0 !important; }
 
-.text-warning { color: #ffc107 !important; }
+.text-warning { color: #F39700 !important; }
 
 .text-danger { color: #dc3545 !important; }
 
@@ -603,7 +603,7 @@
 
 .text-reset { color: inherit !important; }
 
-.bg-primary { background-color: #0d6efd !important; }
+.bg-primary { background-color: #09216C !important; }
 
 .bg-secondary { background-color: #6c757d !important; }
 
@@ -611,7 +611,7 @@
 
 .bg-info { background-color: #0dcaf0 !important; }
 
-.bg-warning { background-color: #ffc107 !important; }
+.bg-warning { background-color: #F39700 !important; }
 
 .bg-danger { background-color: #dc3545 !important; }
 
