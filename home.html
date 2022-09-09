@@ -250,13 +250,13 @@
 							</div>
 							<div class="card-body p-0 bg-white rounded-1">
 								<div class="p-5">
-									<canvas id="conversion" class="chart-drop chartjs-render-monitor" style="width: 100%; height: 200px;"></canvas>
+									<canvas id="lineChart1" class="chart-drop chartjs-render-monitor" style="width: 100%; height: 200px;"></canvas>
 								</div>
 
 								<div id="xScript1">
 									<script type="text/javascript">
 										$(function() {
-											var ctx = $('#conversion');
+											var ctx = $('#lineChart1');
 											ctx.height(200);
 											var myChart = new Chart(ctx, {
 												type: 'line',
@@ -519,7 +519,7 @@
 								<script type="text/javascript">
 								$(function() {
 									new Morris.Donut({
-										element: 'morrisBar8',
+										element: 'morrisBar',
 										data: [
 											{ value: 21.06, label: '初等' },
 											{ value: 41.94, label: '中等' },
@@ -529,12 +529,10 @@
 										labelColor: '#d3d8e2',
 										colors: ['#1753fc ', '#9258f1', '#fdb901'],
 										formatter: function (x) { return x + '%' }
-									}).on('click', function (i, row) {
-										console.log(i, row);
 									});
 
-									var ctx = $('#lineChart1');
-									ctx.height(250);
+									var ctx = $('#barChart1');
+									ctx.height(300);
 									var myChart = new Chart(ctx, {
 										type: 'bar',
 										data: {
@@ -548,58 +546,59 @@
 											}]
 										},
 										options: {
-											scales: {
-												xAxes: [{
-													ticks: {
-														fontColor: '#546172',
-													},
-													display: true,
-													gridLines: {
-														color: 'rgba(255,255,255,0.05)'
-													}
-												}],
-												yAxes: [{
-													ticks: {
-														max: 100,
-														min: 0, 
-														fontColor: '#546172',
-													},
-													display: true,
-													gridLines: {
-														display: true,
-														color: 'rgba(255,255,255,0.05)'
-													}
-												}]
-											},
-											legend: {
-												display: false,
-												labels: {
-													fontColor: '#546172',
-												},
-											},
 											responsive: true,
 											maintainAspectRatio: false,
-											tooltips: {
-												mode: 'index',
-												intersect: false,
-											},
-											tooltips: {},
 											hover: {
 												mode: 'nearest',
 												intersect: true
-											}
+											},
+											plugins: {
+												legend: {
+													display: false,
+													labels: {
+														color: '#546172',
+													},
+												},
+												
+												tooltip: {
+													mode: 'index',
+													intersect: false,
+												},
+											},
+											scales: {
+												x: {
+													display: true,
+													ticks: {
+														color: '#546172',
+													},
+													grid: {
+														display: true,
+													}
+												},
+												y: {
+													display: true,
+													max: 100,
+													min: 0,
+													ticks: {
+														color: '#546172',
+													},
+													grid: {
+														display: true,
+													}
+												}
+											},
+											
 										}
 									});
 								});
 								</script>
 								</div>
 							<div class="card-body bg-white rounded-1">
-								<!-- <img src="images/table04.png"> -->
 								<div class="row">
 									<div class="col-xl-6 col-md-12">
 										<div class="card-body">
 											<h4 class="mb-1 text-center">報考比例</h4>
-											<div id="morrisBar8" class="chartsh chart-dropshadow">
+											<div id="morrisBar" class="chartsh chart-dropshadow">
 											</div>
 										</div>
 									</div>
@@ -607,7 +606,7 @@
 										<div class="card-body">
 											<h4 class="mb-4 text-center">報考比例</h4>
 											<div><div class="chartjs-size-monitor" style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-												<canvas id="lineChart1" width="776" style="height: 250px; display: block; width: 776px;" height="250" class="chartjs-render-monitor"></canvas>
+												<canvas id="barChart1"></canvas>
 											</div>
 										</div>
 									</div>
