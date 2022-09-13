@@ -14,12 +14,10 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-
-
   </head>
 
   <body class="lbg">
-    <header id="page-topbar">
+    <div id="page-topbar">
       <div class="navbar-header">
         <div class="container-fluid cw90">
           <div class="float-start">
@@ -52,7 +50,7 @@
                     <h4>總覽</h4>
                     <ol class="breadcrumb m-0">
                       <li class="breadcrumb-item"><a href="javascript: void(0);">首頁</a></li>
-                      <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li> -->
+                      <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li>
                       <li class="breadcrumb-item active">總覽</li>
                     </ol>
                   </div>
@@ -66,37 +64,100 @@
         
         <!-- 選單 -->
         <div class="container-fluid cw90">
-          <div class="topnav">
-            <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-              <div class="collapse navbar-collapse" id="topnav-menu-content">
-                <ul class="navbar-nav active">
+        <div class="topnav">
+          <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+            <div class="collapse navbar-collapse row" id="topnav-menu-content">
+              <ul class="navbar-nav active">
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="index.html">Dashboard</a>
+                </li> -->
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html">Dashboard</a>
-                  </li>
+                <!-- 01 個人能力位置 -->
+                <li class="nav-item col dropdown ">
+                  <a aria-expanded="false" aria-haspopup="true"
+                    class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                    id="topnav-email" role="button">
+                    <i class="icon-n-icon01"></i>個人能力位置
+                  </a>
 
-                  <li class="nav-item dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="" id="topnav-email" role="button">
-                      Email
-                    </a>
+                  <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="#">團體相比的相對位置</a>
+                  </div>
+                </li>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="">Inbox</a>
-                      <a class="dropdown-item" href="">Email Read</a>
-                      <a class="dropdown-item" href="">Email Compose</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-            
-          
-           
-                
-          </div>
+                <!-- 02 個人能力優劣 -->
+                <li class="nav-item col dropdown ">
+                  <a aria-expanded="false" aria-haspopup="true"
+                    class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                    id="topnav-email" role="button">
+                    <i class="icon-n-icon02"></i>個人能力優劣
+                  </a>
+
+                  <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="#">個人的能力面向分析</a>
+                  </div>
+                </li>
+
+                <!-- 03 特定考生情況 -->
+                <li class="nav-item col dropdown ">
+                  <a aria-expanded="false" aria-haspopup="true"
+                    class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                    id="topnav-email" role="button">
+                    <i class="icon-n-icon03"></i>特定考生情況
+                  </a>
+
+                  <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="#">了解特定條件考生的情況</a>
+                  </div>
+                </li>
+
+                <!-- 04 能力變動情況 -->
+                <li class="nav-item col dropdown ">
+                  <a aria-expanded="false" aria-haspopup="true"
+                    class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                    id="topnav-email" role="button">
+                    <i class="icon-n-icon04"></i>能力變動情況
+                  </a>
+
+                  <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="#">同等級考試紀錄與變動情況</a>
+                    <a class="dropdown-item" href="#">多次應考不同等級時的考試紀錄</a>
+                  </div>
+                </li>
+
+                <!-- 05 應考資料應用 -->
+                <li class="nav-item col dropdown ">
+                  <a aria-expanded="false" aria-haspopup="true"
+                    class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                    id="topnav-email" role="button">
+                    <i class="icon-n-icon05"></i>應考資料應用
+                  </a>
+
+                  <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="#">個人紀錄的儲存與查詢</a>
+                  </div>
+                </li>
+
+                <!-- 06 -->
+                <li class="nav-item col dropdown ">
+                  <a aria-expanded="false" aria-haspopup="true"
+                    class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                    id="topnav-email" role="button">
+                    <i class="icon-n-icon06"></i>個人寫作問題
+                  </a>
+
+                  <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="">寫作方面的表現查詢</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
       </div>
-    </header>
+      </div>
+    </div>
+
 
     <div class="main-content">
       <div class="page-content">

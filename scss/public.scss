@@ -161,6 +161,7 @@ button {
   }
 }
 
+
 .topnav {
   background-color: white;
   // box-shadow: $box-shadow;
@@ -174,38 +175,61 @@ button {
   }
   .navbar-nav {
     .nav-link {
-      font-size: 14px;
+      font-size: 1.2rem;
       position: relative;
       padding: 1.2rem 1.5rem;
-      color:black;
+      color: rgba(42, 50, 65, 1.00);
+      border-bottom: 2px solid rgba(255, 255, 255, 1.00);
+
       i {
         display: block;
-        font-size: 16px;
-        margin-bottom: 8px;
+        font-size: 1.6rem;
         text-align: center;
+        color: rgba(42, 50, 65, 1.00);
       }
+
       &:focus, &:hover {
         color:black;
         background-color: transparent;
+        text-decoration: none;
+        color: rgba(42, 50, 65, 1.00);
+        border-bottom: 2px solid rgba(216, 145, 34, 1.00);
       }
     }
     .dropdown-item {
-      color: black;
+      color: rgba(42, 50, 65, 1.00);
+
       &.active, &:hover {
-        color: black;
+        color: rgba(42, 50, 65, 1.00);
         background: transparent;
       }
     }
+
     .nav-item {
+      text-align: center;
+
       .nav-link.active {
         color: black;
       }
     }
+
     .dropdown {
+      position: relative;
+
       &.active {
-        >a {
+        
+        > a {
           color: black;
           background-color: transparent;
+        }
+      }
+
+      &:hover {
+        .dropdown-menu {
+          display: block;
+          width: 100%;
+          border: 0 ;
+          font-size: 1.2rem;
         }
       }
     }
@@ -240,23 +264,17 @@ button {
 
 // main
 .main-content {
+  display: inline-block !important;
+  width: 100% !important;
   position: relative;
+  margin-left: 0 !important;
+  overflow: auto !important;
 }
 
 .page-content {
-  margin-top: 70px;
+  margin-top: 110px;
   padding: calc(180px + 24px) calc(24px / 2) 60px calc(24px / 2);
 }
-
-
-// footer
-// footer {
-//   display: inline-block;
-//   width: 100%;
-//   position: fixed;
-//   bottom: 0;
-//   z-index: 99;
-// }
 
 .footer {
   display: inline-block;
@@ -269,13 +287,6 @@ button {
   // margin-top: 300px;
 }
 
-// .footer-bg {
-//   display: inline-block;
-//   width: 100%;
-//   background-image: url(../images/footer-bg.png);
-//   background-size: cover;
-//   background-repeat: no-repeat;
-// }
 
 
 // booststrap
@@ -306,3 +317,15 @@ button {
     width: 90% !important;
   }
 }
+
+.dropdown-toggle {
+
+  &:after {
+    display: none;
+  }
+
+}
+
+
+
+
