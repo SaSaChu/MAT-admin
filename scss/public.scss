@@ -80,6 +80,7 @@ button {
 
 .be-bar {
   position: relative;
+  margin-bottom: 0 !important;
 
   &:before {
     display: inline-block;
@@ -136,6 +137,10 @@ button {
 .page-title-content {
   padding: 35px 0;
 
+  @include range-width(0, 1000px) {
+    padding: 20px 0 60px 0;
+  }
+
     .page-title-box {
       padding-bottom: 0;
 
@@ -161,6 +166,7 @@ button {
   }
 }
 
+
 .topnav {
   background-color: white;
   // box-shadow: $box-shadow;
@@ -174,38 +180,71 @@ button {
   }
   .navbar-nav {
     .nav-link {
-      font-size: 14px;
+      font-size: 1.2rem;
       position: relative;
       padding: 1.2rem 1.5rem;
-      color:black;
+      color: rgba(42, 50, 65, 1.00);
+      border-bottom: 2px solid rgba(255, 255, 255, 1.00);
+      left: 10px;
+
       i {
         display: block;
-        font-size: 16px;
-        margin-bottom: 8px;
+        font-size: 1.6rem;
         text-align: center;
+        color: rgba(42, 50, 65, 1.00);
       }
+
       &:focus, &:hover {
         color:black;
         background-color: transparent;
+        text-decoration: none;
+        color: rgba(42, 50, 65, 1.00);
+        border-bottom: 2px solid rgba(216, 145, 34, 1.00);
       }
     }
+
     .dropdown-item {
-      color: black;
+      color: rgba(42, 50, 65, 1.00);
+      padding: 5px 10px;
+
       &.active, &:hover {
-        color: black;
+        color: rgba(216, 145, 34, 1.00);
         background: transparent;
+        text-decoration: none;
       }
     }
+
     .nav-item {
+      text-align: center;
+
       .nav-link.active {
         color: black;
       }
     }
+
     .dropdown {
+      position: relative;
+
       &.active {
-        >a {
+        
+        > a {
           color: black;
           background-color: transparent;
+        }
+      }
+
+      &:hover {
+        .dropdown-menu {
+          display: block;
+          width: 100%;
+          border: 0 ;
+          font-size: 1.1rem;
+          -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .3), 0 3px 8px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .3), 0 3px 8px 0 rgba(0, 0, 0, .1);
+
+          &.dropdown-menu-left {
+            left: 10px;
+          }
         }
       }
     }
@@ -213,8 +252,16 @@ button {
 }
 
 .header-pos {
+  display: inline-block;
+  width: 100%;
+  max-width: 405px;
   bottom: -35px;
   right: 8px;
+
+  @include range-width(0, 1000px) {
+    max-width: 255px;
+    bottom: 6px;
+  }
 }
 
 .h-icon {
@@ -240,23 +287,17 @@ button {
 
 // main
 .main-content {
+  display: inline-block !important;
+  width: 100% !important;
   position: relative;
+  margin-left: 0 !important;
+  overflow: auto !important;
 }
 
 .page-content {
-  margin-top: 70px;
+  margin-top: 110px;
   padding: calc(180px + 24px) calc(24px / 2) 60px calc(24px / 2);
 }
-
-
-// footer
-// footer {
-//   display: inline-block;
-//   width: 100%;
-//   position: fixed;
-//   bottom: 0;
-//   z-index: 99;
-// }
 
 .footer {
   display: inline-block;
@@ -269,13 +310,6 @@ button {
   // margin-top: 300px;
 }
 
-// .footer-bg {
-//   display: inline-block;
-//   width: 100%;
-//   background-image: url(../images/footer-bg.png);
-//   background-size: cover;
-//   background-repeat: no-repeat;
-// }
 
 
 // booststrap
@@ -302,7 +336,29 @@ button {
 }
 
 .container-fluid {
+  padding: 0 !important;
+
   &.cw90 {
     width: 90% !important;
+
+    @include range-width(0, 1055px) {
+      width: 100% !important;
+    }
   }
 }
+
+.dropdown-toggle {
+  &:after {
+    display: none;
+  }
+}
+
+.h2 {
+  @include range-width(0, 1055px) {
+    font-size: calc(1.25rem + 0.9vw) !important;
+  }
+}
+
+
+
+

@@ -8,39 +8,24 @@
 
 	<title>MAT測驗結果應用平台</title>
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-	<link rel="stylesheet" type="text/css" href="css/public.css">
-	<link rel="stylesheet" type="text/css" href="css/icon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+  </head>
 
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
-		rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-
-	<script src="js/jquery-1.12.4.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-	<!-- <script src="https://www.cwt.org.tw/MATOLD/resources/assets/plugins/chart/chart.bundle-dark.js"></script> -->
-	<!-- <script src="https://www.cwt.org.tw/MATOLD/resources/assets/plugins/chart/utils.js"></script> -->
-</head>
-
-<body class="lbg">
-	<header id="page-topbar">
-		<div class="navbar-header">
-			<div class="container-fluid cw90">
-				<div class="float-start">
-					<img src="images/logo.svg">
-				</div>
-				<div class="float-end">
-					<div class="d-inline-block me-3">
-						<span class="me-2">葉書昀</span>
-						<div class="userpic rounded-circle">
-							<img src="images/user-4.jpg">
-						</div>
-					</div>
+  <body class="lbg">
+    <div id="page-topbar">
+      <div class="navbar-header">
+        <div class="container-fluid cw90">
+          <div class="float-start">
+            <img src="images/logo.svg">
+          </div>
+          <div class="float-end">
+            <div class="d-inline-block me-3">
+              <span class="me-2">葉書昀</span>
+              <div class="userpic rounded-circle">
+                <img src="images/user-4.jpg">
+              </div>
+            </div>
 
 					<div class="d-inline-block">
 						<button class="bg-primary rounded-circle h-icon">
@@ -51,6 +36,7 @@
 			</div>
 		</div>
 
+<<<<<<< HEAD
 		<div class="top-navigation">
 			<!-- 麵包屑 -->
 			<div class="page-title-content">
@@ -91,6 +77,125 @@
 										id="topnav-email" role="button">
 										Email
 									</a>
+=======
+      <div class="top-navigation">
+        <!-- 麵包屑 -->
+        <div class="page-title-content">
+          <div class="container-fluid cw90">
+            <div class="row">
+              <div class="col-6">
+                  <div class="page-title-box">
+                    <h4>總覽</h4>
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item"><a href="javascript: void(0);">首頁</a></li>
+                      <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li> -->
+                      <li class="breadcrumb-item active">總覽</li>
+                    </ol>
+                  </div>
+              </div>
+              <div class="col-6 position-relative">
+                <img class='position-absolute header-pos' src="images/header-img.png">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 選單 -->
+        <div class="container-fluid cw90">
+          <div class="topnav">
+            <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+              <div class="collapse navbar-collapse row" id="topnav-menu-content">
+                <ul class="navbar-nav active">
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="index.html">Dashboard</a>
+                  </li> -->
+
+                  <!-- 01 個人能力位置 -->
+                  <li class="nav-item col dropdown ">
+                    <a aria-expanded="false" aria-haspopup="true"
+                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                      id="topnav-email" role="button">
+                      <i class="icon-n-icon01"></i>個人能力位置
+                    </a>
+
+                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                      <a class="dropdown-item" href="page01.html">團體相比的相對位置</a>
+                    </div>
+                  </li>
+
+                  <!-- 02 個人能力優劣 -->
+                  <li class="nav-item col dropdown ">
+                    <a aria-expanded="false" aria-haspopup="true"
+                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                      id="topnav-email" role="button">
+                      <i class="icon-n-icon02"></i>個人能力優劣
+                    </a>
+
+                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                      <a class="dropdown-item" href="page02.html">個人的能力面向分析</a>
+                    </div>
+                  </li>
+
+                  <!-- 03 特定考生情況 -->
+                  <li class="nav-item col dropdown ">
+                    <a aria-expanded="false" aria-haspopup="true"
+                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                      id="topnav-email" role="button">
+                      <i class="icon-n-icon03"></i>特定考生情況
+                    </a>
+
+                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                      <a class="dropdown-item" href="page03.html">了解特定條件考生的情況</a>
+                    </div>
+                  </li>
+
+                  <!-- 04 能力變動情況 -->
+                  <li class="nav-item col dropdown ">
+                    <a aria-expanded="false" aria-haspopup="true"
+                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                      id="topnav-email" role="button">
+                      <i class="icon-n-icon04"></i>能力變動情況
+                    </a>
+
+                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                      <a class="dropdown-item" href="page04.html">同等級考試紀錄與變動情況</a>
+                      <a class="dropdown-item" href="page05.html">多次應考不同等級時的考試紀錄</a>
+                    </div>
+                  </li>
+
+                  <!-- 05 應考資料應用 -->
+                  <li class="nav-item col dropdown ">
+                    <a aria-expanded="false" aria-haspopup="true"
+                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                      id="topnav-email" role="button">
+                      <i class="icon-n-icon05"></i>應考資料應用
+                    </a>
+
+                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                      <a class="dropdown-item" href="page06.html">個人紀錄的儲存與查詢</a>
+                    </div>
+                  </li>
+
+                  <!-- 06 -->
+                  <li class="nav-item col dropdown ">
+                    <a aria-expanded="false" aria-haspopup="true"
+                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+                      id="topnav-email" role="button">
+                      <i class="icon-n-icon06"></i>個人寫作問題
+                    </a>
+
+                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+                      <a class="dropdown-item" href="page07.html">寫作方面的表現查詢</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+>>>>>>> master
 
 									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
 										<a class="dropdown-item" href="">Inbox</a>
@@ -106,6 +211,7 @@
 		</div>
 	</header>
 
+<<<<<<< HEAD
 	<div class="main-content">
 		<div class="page-content">
 			<div class="container-fluid cw90">
@@ -402,6 +508,126 @@
 										</div>
 									</div>
 								</div>
+=======
+          <!-- 使用人數 -->
+          <div class="row my-5">
+            <div class="col-12">
+              <div class="gradient-bg rounded-1">
+                <div class="card-group">
+                  <div class="card c-no-gb">
+                    <div class="card-body text-center">
+                      <p class="card-text mb-0"><small class="text-white">今日</small></p>
+                      <p class="h1 text-white mt-2">1</p>
+                      <p class="card-text mb-0"><small class="text-white">使用人次</small></p>
+                    </div>
+                  </div>
+                  <div class="card c-no-gb">
+                    <div class="card-body text-center">
+                      <p class="card-text mb-0"><small class="text-white">昨日</small></p>
+                      <p class="h1 text-white mt-2">1</p>
+                      <p class="card-text mb-0"><small class="text-white">使用人次</small></p>
+                    </div>
+                  </div>
+                  <div class="card c-no-gb">
+                    <div class="card-body text-center">
+                      <p class="card-text mb-0"><small class="text-white">近七日</small></p>
+                      <p class="h1 text-white mt-2">15</p>
+                      <p class="card-text mb-0"><small class="text-white">使用人次</small></p>
+                    </div>
+                  </div>
+                  <div class="card c-no-gb">
+                    <div class="card-body text-center">
+                      <p class="card-text mb-0"><small class="text-white">近一個月</small></p>
+                      <p class="h1 text-white mt-2">46</p>
+                      <p class="card-text mb-0"><small class="text-white">使用人次</small></p>
+                    </div>
+                  </div>
+                  <div class="card c-no-gb">
+                    <div class="card-body text-center">
+                      <p class="card-text mb-0"><small class="text-white">近半年</small></p>
+                      <p class="h1 text-white mt-2">238</p>
+                      <p class="card-text mb-0"><small class="text-white">使用人次</small></p>
+                    </div>
+                  </div>
+                  <div class="card c-no-gb">
+                    <div class="card-body text-center">
+                      <p class="card-text mb-0"><small class="text-white">近一年</small></p>
+                      <p class="h1 text-white mt-2">371</p>
+                      <p class="card-text mb-0"><small class="text-white">使用人次</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 考證梯次人數＋合格通過率 -->
+          <div class="row">
+            <div class="col-7">
+              <div class="card h-100 bg-transparent border-0">
+                <div class="card-header bg-transparent border-0 mb-3">
+                  <p class="text-primary h4  be-bar">歷年考證梯次人數</p>
+                  <p class="card-text mb-0"><small class="text-muted">只統計取證梯次，不含其他專業梯次。</small></p>
+                </div>
+                <div class="card-body p-0 bg-white rounded-1">
+                  <img src="images/table01.png" class="img-fluid">
+                  <div class="row">
+                    <div class="col-3 p-0 text-center">
+                      <p class="lightBlue-bg py-2"><small class="text-muted">今年已取證總人次</small></p>
+                      <p class="h1 fw-bold mb-3">6,660</p>
+                    </div>
+                     <div class="col-3 p-0 text-center">
+                      <p class="lightBlue-bg py-2"><small class="text-muted">今年初等已取證總人次</small></p>
+                      <p class="h1 fw-bold mb-3">1,924</p>
+                    </div>
+                     <div class="col-3 p-0 text-center">
+                      <p class="lightBlue-bg py-2"><small class="text-muted">今年中等已取證總人次</small></p>
+                      <p class="h1 fw-bold mb-3">2,709</p>
+                    </div>
+                     <div class="col-3 p-0 text-center">
+                      <p class="lightBlue-bg py-2"><small class="text-muted">今年中高等已取證總人次</small></p>
+                      <p class="h1 fw-bold mb-3">1,967</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-5">
+              <div class="card h-100 bg-transparent border-0">
+                <div class="card-header bg-transparent border-0 mb-3">
+                  <p class="text-primary h4 be-bar">合格通過率</p>
+                  <p class="card-text mb-0"><small class="text-muted">只統計取證梯次，不含其他專業梯次。</small></p>
+                </div>
+
+                <div class="card-body p-0">
+                  <div class="card border-0 mb-5">
+                    <div class="card-header h5 bg-white py-3">語文素養通過率</div>
+                    <div class="card-body">
+                      <img src="images/table02.png" class="img-fluid">
+                    </div>
+                  </div>
+
+                  <div class="card border-0">
+                    <div class="card-header h5 bg-white py-3">寫作測驗通過率</div>
+                    <div class="card-body">
+                      <img src="images/table03.png" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 最新公告＋各等級報告率 -->
+          <div class="row mt-5">
+            <div class="col-4">
+              <div class="card h-100 bg-transparent border-0">
+                <div class="card-header bg-transparent border-0 mb-3">
+                  <p class="text-primary h4 be-bar">CWT 最新公告</p>
+                  <p class="card-text mb-0"><small class="text-muted">Overview this Month</small></p>
+                </div>
+>>>>>>> master
 
 								<div class="card border-0">
 									<div class="card-header h5 bg-white py-3">寫作測驗通過率</div>
@@ -479,6 +705,7 @@
 										</div>
 									</a>
 
+<<<<<<< HEAD
 									<a href="#" class="list-group-item list-group-item-action py-3">
 										<div class="d-flex">
 											<div class="w-auto pe-3"><img src="images/icon01.svg"></div>
@@ -491,6 +718,23 @@
 											</div>
 										</div>
 									</a>
+=======
+            <div class="col-8">
+              <div class="card h-100 bg-transparent border-0">
+                <div class="card-header bg-transparent border-0 mb-3">
+                  <p class="text-primary h4  be-bar">各等級報考率</p>
+                  <p class="card-text mb-0"><small class="text-muted">統計歷年各等級報考比例</small></p>
+                </div>
+                <div class="card-body bg-white rounded-1">
+                  <img src="images/table04.png" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+>>>>>>> master
 
 									<a href="#" class="list-group-item list-group-item-action py-3">
 										<div class="d-flex">
