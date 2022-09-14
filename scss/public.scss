@@ -80,6 +80,7 @@ button {
 
 .be-bar {
   position: relative;
+  margin-bottom: 0 !important;
 
   &:before {
     display: inline-block;
@@ -136,6 +137,10 @@ button {
 .page-title-content {
   padding: 35px 0;
 
+  @include range-width(0, 1000px) {
+    padding: 20px 0 60px 0;
+  }
+
     .page-title-box {
       padding-bottom: 0;
 
@@ -180,6 +185,7 @@ button {
       padding: 1.2rem 1.5rem;
       color: rgba(42, 50, 65, 1.00);
       border-bottom: 2px solid rgba(255, 255, 255, 1.00);
+      left: 10px;
 
       i {
         display: block;
@@ -196,12 +202,15 @@ button {
         border-bottom: 2px solid rgba(216, 145, 34, 1.00);
       }
     }
+
     .dropdown-item {
       color: rgba(42, 50, 65, 1.00);
+      padding: 5px 10px;
 
       &.active, &:hover {
-        color: rgba(42, 50, 65, 1.00);
+        color: rgba(216, 145, 34, 1.00);
         background: transparent;
+        text-decoration: none;
       }
     }
 
@@ -229,7 +238,13 @@ button {
           display: block;
           width: 100%;
           border: 0 ;
-          font-size: 1.2rem;
+          font-size: 1.1rem;
+          -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .3), 0 3px 8px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .3), 0 3px 8px 0 rgba(0, 0, 0, .1);
+
+          &.dropdown-menu-left {
+            left: 10px;
+          }
         }
       }
     }
@@ -237,8 +252,16 @@ button {
 }
 
 .header-pos {
+  display: inline-block;
+  width: 100%;
+  max-width: 405px;
   bottom: -35px;
   right: 8px;
+
+  @include range-width(0, 1000px) {
+    max-width: 255px;
+    bottom: 6px;
+  }
 }
 
 .h-icon {
@@ -313,17 +336,27 @@ button {
 }
 
 .container-fluid {
+  padding: 0 !important;
+
   &.cw90 {
     width: 90% !important;
+
+    @include range-width(0, 1055px) {
+      width: 100% !important;
+    }
   }
 }
 
 .dropdown-toggle {
-
   &:after {
     display: none;
   }
+}
 
+.h2 {
+  @include range-width(0, 1055px) {
+    font-size: calc(1.25rem + 0.9vw) !important;
+  }
 }
 
 
