@@ -1,247 +1,421 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta http-equiv="Content-Language" content="zh-tw">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
 
-    <title>MAT測驗結果應用平台</title>
+<head>
+	<meta http-equiv="Content-Language" content="zh-tw">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/public.css">
-    <link rel="stylesheet" type="text/css" href="css/icon.css">
+	<title>MAT測驗結果應用平台</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-  </head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
 
-  <body class="lbg">
-    <div id="page-topbar">
-      <div class="navbar-header">
-        <div class="container-fluid cw90">
-          <div class="float-start">
-            <img src="images/logo.svg">
-          </div>
-          <div class="float-end">
-            <div class="d-inline-block me-3">
-              <span class="me-2">葉書昀</span>
-              <div class="userpic rounded-circle">
-                <img src="images/user-4.jpg">
-              </div>
-            </div>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
 
-            <div class="d-inline-block">
-              <button class="bg-primary rounded-circle h-icon">
-                <img src="images/logout.svg">
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+<body class="lbg">
+	<div id="page-topbar">
+		<div class="navbar-header">
+			<div class="container-fluid cw90">
+				<div class="float-start">
+					<img src="images/logo.svg">
+				</div>
+				<div class="float-end">
+					<div class="d-inline-block me-3">
+						<span class="me-2">葉書昀</span>
+						<div class="userpic rounded-circle">
+							<img src="images/user-4.jpg">
+						</div>
+					</div>
 
-      <div class="top-navigation">
-        <!-- 麵包屑 -->
-        <div class="page-title-content">
-          <div class="container-fluid cw90">
-            <div class="row">
-              <div class="col-6">
-                  <div class="page-title-box">
-                    <h4>個人能力位置</h4>
-                    <ol class="breadcrumb m-0">
-                      <li class="breadcrumb-item"><a href="javascript: void(0);">首頁</a></li>
-                      <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li> -->
-                      <li class="breadcrumb-item active">個人能力位置</li>
-                      <li class="breadcrumb-item active">團體相比的相對位置</li>
-                    </ol>
-                  </div>
-              </div>
-              <div class="col-6 position-relative">
-                <img class='position-absolute header-pos' src="images/header-img.png">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- 選單 -->
-        <div class="container-fluid cw90">
-          <div class="topnav">
-            <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-              <div class="collapse navbar-collapse row" id="topnav-menu-content">
-                <ul class="navbar-nav active">
-                  <!-- <li class="nav-item">
+					<div class="d-inline-block">
+						<button class="bg-primary rounded-circle h-icon">
+							<img src="images/logout.svg">
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="top-navigation">
+			<!-- 麵包屑 -->
+			<div class="page-title-content">
+				<div class="container-fluid cw90">
+					<div class="row">
+						<div class="col-6">
+							<div class="page-title-box">
+								<h4>個人能力位置</h4>
+								<ol class="breadcrumb m-0">
+									<li class="breadcrumb-item"><a href="javascript: void(0);">首頁</a></li>
+									<!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li> -->
+									<li class="breadcrumb-item active">個人能力位置</li>
+									<li class="breadcrumb-item active">團體相比的相對位置</li>
+								</ol>
+							</div>
+						</div>
+						<div class="col-6 position-relative">
+							<img class='position-absolute header-pos' src="images/header-img.png">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 選單 -->
+			<div class="container-fluid cw90">
+				<div class="topnav">
+					<nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+						<div class="collapse navbar-collapse row" id="topnav-menu-content">
+							<ul class="navbar-nav active">
+								<!-- <li class="nav-item">
                     <a class="nav-link" href="index.html">Dashboard</a>
                   </li> -->
 
-                  <!-- 01 個人能力位置 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon01"></i>個人能力位置
-                    </a>
+								<!-- 01 個人能力位置 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon01"></i>個人能力位置
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page01.html">團體相比的相對位置</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page01.html">團體相比的相對位置</a>
+									</div>
+								</li>
 
-                  <!-- 02 個人能力優劣 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon02"></i>個人能力優劣
-                    </a>
+								<!-- 02 個人能力優劣 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon02"></i>個人能力優劣
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page02.html">個人的能力面向分析</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page02.html">個人的能力面向分析</a>
+									</div>
+								</li>
 
-                  <!-- 03 特定考生情況 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon03"></i>特定考生情況
-                    </a>
+								<!-- 03 特定考生情況 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon03"></i>特定考生情況
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page03.html">了解特定條件考生的情況</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page03.html">了解特定條件考生的情況</a>
+									</div>
+								</li>
 
-                  <!-- 04 能力變動情況 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon04"></i>能力變動情況
-                    </a>
+								<!-- 04 能力變動情況 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon04"></i>能力變動情況
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page04.html">同等級考試紀錄與變動情況</a>
-                      <a class="dropdown-item" href="page05.html">多次應考不同等級時的考試紀錄</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page04.html">同等級考試紀錄與變動情況</a>
+										<a class="dropdown-item" href="page05.html">多次應考不同等級時的考試紀錄</a>
+									</div>
+								</li>
 
-                  <!-- 05 應考資料應用 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon05"></i>應考資料應用
-                    </a>
+								<!-- 05 應考資料應用 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon05"></i>應考資料應用
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page06.html">個人紀錄的儲存與查詢</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page06.html">個人紀錄的儲存與查詢</a>
+									</div>
+								</li>
 
-                  <!-- 06 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon06"></i>個人寫作問題
-                    </a>
+								<!-- 06 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon06"></i>個人寫作問題
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page07.html">寫作方面的表現查詢</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page07.html">寫作方面的表現查詢</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="main-content">
-      <div class="page-content">
-        <div class="container-fluid cw90">
-          <!-- 文字說明 -->
-          <div class="row mb-5">
-            <div class="col-12">
-              <div class="gradient-bg rounded-1">
-                <p class="text-white fs-5 lh-base p-3 mb-0">
-                了解自己的能力所在位置(和團體相比的相對位置)，同等級跟自己同性質的考生表現。</br>
-                同年齡/同地區的人，都考什麼等級？哪個等級取證率最高/最低？語文素養哪個面向表現最佳/最差？寫作測驗哪個面向表現最佳/最差？
-                </p>
-              </div>
-            </div>
-          </div>
+	<div class="main-content">
+		<div class="page-content">
+			<div class="container-fluid cw90">
+				<!-- 文字說明 -->
+				<div class="row mb-5">
+					<div class="col-12">
+						<div class="gradient-bg rounded-1">
+							<p class="text-white fs-5 lh-base p-3 mb-0">
+								了解自己的能力所在位置(和團體相比的相對位置)，同等級跟自己同性質的考生表現。</br>
+								同年齡/同地區的人，都考什麼等級？哪個等級取證率最高/最低？語文素養哪個面向表現最佳/最差？寫作測驗哪個面向表現最佳/最差？
+							</p>
+						</div>
+					</div>
+				</div>
 
-          <!-- 1＋2 -->
-          <div class="row mt-5">
-            <div class="col-6">
-              <div class="card h-100 bg-transparent border-0">
-                <div class="card-header bg-transparent border-0 mb-3">
-                  <p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)的人都考什麼等級</p>
-                </div>
-                <div class="card-body bg-white rounded-1">
-                  <img src="images/table04.png" class="img-fluid">
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="card h-100 bg-transparent border-0">
-                <div class="card-header bg-transparent border-0 mb-3">
-                  <p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)的人哪些等級取證率最高/最低</p>
-                </div>
-                <div class="card-body bg-white rounded-1">
-                  <img src="images/table04.png" class="img-fluid">
-                </div>
-              </div>
-            </div>
-          </div>
+				<!-- 1＋2 -->
+				<div class="row mt-5">
+					<div class="col-6">
+						<div class="card h-100 bg-transparent border-0">
+							<div class="card-header bg-transparent border-0 mb-3">
+								<p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)的人都考什麼等級</p>
+							</div>
+							<div class="card-body bg-white rounded-1">
+								<!-- <img src="images/table04.png" class="img-fluid"> -->
+								<canvas id="pieChart"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="card h-100 bg-transparent border-0">
+							<div class="card-header bg-transparent border-0 mb-3">
+								<p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)的人哪些等級取證率最高/最低</p>
+							</div>
+							<div class="card-body bg-white rounded-1">
+								<!-- <img src="images/table04.png" class="img-fluid"> -->
+								<canvas id="doughoutChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
 
-          <!-- 3＋4 -->
-          <div class="row mt-5">
-            <div class="col-6">
-              <div class="card h-100 bg-transparent border-0">
-                <div class="card-header bg-transparent border-0 mb-3">
-                  <p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)在語文素養面向表現最佳/最差</p>
-                </div>
-                <div class="card-body bg-white rounded-1">
-                  <img src="images/table04.png" class="img-fluid">
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="card h-100 bg-transparent border-0">
-                <div class="card-header bg-transparent border-0 mb-3">
-                  <p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)的人哪些等級取證率最高/最低</p>
-                </div>
-                <div class="card-body bg-white rounded-1">
-                  <img src="images/table04.png" class="img-fluid">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <footer>
-      <small class="footer">
-         <span class="d-inline-block">中文能力測驗中心 版權所有</span>
-        ©
-        <script>
-        document.write(new Date().getFullYear())
-        </script>
-        <span class="d-inline-block">Chinese Writing Test Center All rights reserved.</span>
-      </small>
-    </footer>
+				<!-- 3＋4 -->
+				<div class="row mt-5">
+					<div class="col-6">
+						<div class="card h-100 bg-transparent border-0">
+							<div class="card-header bg-transparent border-0 mb-3">
+								<p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)在語文素養面向表現最佳/最差</p>
+							</div>
+							<div class="card-body bg-white rounded-1">
+								<!-- <img src="images/table04.png" class="img-fluid"> -->
+								<canvas id="radarChart"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="card h-100 bg-transparent border-0">
+							<div class="card-header bg-transparent border-0 mb-3">
+								<p class="text-primary h4  be-bar">同年齡(2000年)/同地區(高雄市)的人哪些等級取證率最高/最低</p>
+							</div>
+							<div class="card-body bg-white rounded-1">
+								<!-- <img src="images/table04.png" class="img-fluid"> -->
+								<canvas id="polarAreaChart"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-    <script src="https://kit.fontawesome.com/25b2931f6f.js" crossorigin="anonymous"></script>
-    <script language="javascript" type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/public.js"></script>
-    <script src="js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-  </body>
+	<footer>
+		<small class="footer">
+			<span class="d-inline-block">中文能力測驗中心 版權所有</span>
+			©
+			<script>
+				document.write(new Date().getFullYear())
+			</script>
+			<span class="d-inline-block">Chinese Writing Test Center All rights reserved.</span>
+		</small>
+	</footer>
+
+
+	<script src="https://kit.fontawesome.com/25b2931f6f.js" crossorigin="anonymous"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/public.js"></script>
+	<script src="js/app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var pieChart = document.getElementById('pieChart');
+			var myPieChart = new Chart(pieChart, {
+				type: 'pie',
+				data: {
+					datasets: [
+						{
+							data: [33.63, 34.99, 31.38],
+							backgroundColor: ['rgba(0, 122, 255, 1.0)', 'rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)'],
+							hoverBackgroundColor: ['rgba(0, 122, 255, 1.0)', 'rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)'],
+							borderColor: 'transparent'
+						}
+					],
+					labels: ['中高等', '中等', '初等']
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: {
+							labels:
+							{
+								display: true,
+								fontColor: '#FFF'
+							}
+						},
+						tooltip: {
+							callbacks: {
+								label: function (context) {
+									return ' ' + context.label + '：' + context.dataset.data[context.dataIndex] + ' %';
+								}
+							}
+						}
+					}
+				}
+			});
+			
+			var doughoutChart = document.getElementById('doughoutChart');
+			var myDoughoutChart = new Chart(doughoutChart, {
+				type: 'doughnut',
+				data: {
+					datasets: [
+						{
+							data: [58.05, 61.03, 67.26],
+							backgroundColor: ['rgba(0, 122, 255, 1.0)', 'rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)'],
+							hoverBackgroundColor: ['rgba(0, 122, 255, 1.0)', 'rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)'],
+							borderColor: 'transparent'
+						}],
+					labels: ['中高等', '中等', '初等']
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: {
+							labels: {
+								display: true,
+							}
+						},
+						tooltip: {
+							callbacks: {
+								label: function (context) {
+									let label = context.label || '';
+									return ' ' + label + '：' + context.dataset.data[context.dataIndex] + ' %';
+								}
+							}
+						}
+					},
+				}
+			});
+			
+			var radarChart = document.getElementById('radarChart');
+			var myRadarChart = new Chart(radarChart, {
+				type: 'radar',
+				data: {
+					labels: ['文字', '語詞', '成語短語', '造句標點', '修辭技巧', '語文知識', '文意判讀'],
+					datasets: [
+						{
+							label: '語文素養',
+							data: [77, 77, 77, 82, 80, 74, 83],
+							borderColor: 'rgba(0, 122, 255, .5)',
+							borderWidth: '1',
+							backgroundColor: 'rgba(0, 122, 255, .5)',
+							pointBackgroundColor: 'rgba(0, 122, 255, .5)'
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: {
+							display: false,
+							labels: {
+								fontColor: '#FFF'
+							}
+						},
+						tooltip: {
+							callbacks: {
+								label: function (context) {
+									return ' 平均：' + context.dataset.data[context.dataIndex] + ' 分';
+								}
+							}
+						}
+					},
+
+					scales: {
+						r: {
+							max: 100,
+							min: 0,
+							ticks: {
+								display: false,
+							},
+						},
+					},
+				}
+			});
+			
+			var polarAreaChart = document.getElementById('polarAreaChart');
+			var myPolarAreaChart = new Chart(polarAreaChart, {
+				type: 'polarArea',
+				data: {
+					labels: ['立意取材', '結構組織', '遣詞造句', '錯別字標點'],
+					datasets: [
+						{
+							data: [4, 4, 4, 4],
+							backgroundColor: ['rgba(0, 122, 255, 1.0)', ' rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)', 'rgba(255, 202, 60, 1.00)'],
+							hoverBackgroundColor: ['rgba(0, 122, 255, 1.0)', ' rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)', 'rgba(255, 202, 60, 1.00)'],
+							borderColor: 'transparent',
+						}
+					],
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: {
+							labels: {
+								// color: '',
+							}
+						},
+						tooltip: {
+							callbacks: {
+								label: function (context) {
+									return ' ' + context.label + '：平均 ' + context.dataset.data[context.dataIndex] + ' 級分';
+								}
+							}
+						}
+					},
+					scales: {
+						r: {
+							max: 6,
+							min: 0,
+							ticks: {
+								display: false,
+							},
+						},
+					},
+				}
+			});
+		});
+	</script>
+</body>
+
 </html>

@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+	<meta http-equiv="Content-Language" content="zh-tw">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+
+	<title>MAT測驗結果應用平台</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+	<script src="js/jquery-1.12.4.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.0.0/d3.min.js"></script>
+	<script src="https://www.cwt.org.tw/MATOLD/resources/js/liquidFillGauge.js"></script>
+</head>
+
+<body>
+	<!-- 個人能力位置 團體相比的相對位置 -->
+	
+	<script type="text/javascript">
+		$(function () {
+			var ctx1 = document.getElementById('pieChart');
+			var myChart1 = new Chart(ctx1, {
+				type: 'pie',
+				data: {
+					datasets: [
+						{
+							data: [33.63, 34.99, 31.38],
+							backgroundColor: ['#F00', '#FA0', '#FF0', '#080', '#0FF', '#508', '#808'],
+							hoverBackgroundColor: ['#F33', '#FB3', '#FF3', '#3B3', '#3FF', '#63B', '#A3A'],
+							borderColor: 'transparent'
+						}
+					],
+					labels: ['中高等', '中等', '初等']
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					plugins: {
+						legend: {
+							labels:
+							{
+								display: true,
+								fontColor: '#FFF'
+							}
+						},
+						tooltip: {
+							callbacks: {
+								label: function (context) {
+									return ' ' + context.label + '：' + context.dataset.data[context.dataIndex] + ' %'; 
+								}
+							}
+						}
+					}
+				}
+			});
+			var ctx2 = document.getElementById('doughoutChart');
+			var myChart2 = new Chart(ctx2, {
+				type: 'doughnut', 
+				data: { 
+					datasets: [
+						{ 
+							data: [58.05, 61.03, 67.26],
+							backgroundColor: ['#F00', '#FA0', '#FF0', '#080', '#0FF', '#508', '#808'], 
+							hoverBackgroundColor: ['#F33', '#FB3', '#FF3', '#3B3', '#3FF', '#63B', '#A3A'], 
+							borderColor: 'transparent' }], 
+							labels: ['中高等', '中等', '初等'] }, 
+							options: { 
+								responsive: true, 
+								maintainAspectRatio: false, 
+								plugins: {
+									legend: { 
+										labels: { 
+											display: true, 
+											fontColor: '#FFF' 
+										} 
+									}, 
+									tooltip: { 
+										callbacks: { 
+											label: function(context) {
+												let label = context.label || '';
+												return ' ' + label + '：' + context.dataset.data[context.dataIndex] + ' %'; 
+											}
+										} 
+									}
+								},
+							}
+			});
+			var ctx3 = document.getElementById('radarChart');
+			var myChart3 = new Chart(ctx3, { 
+				type: 'radar', 
+				data: { 
+					labels: ['文字', '語詞', '成語短語', '造句標點', '修辭技巧', '語文知識', '文意判讀'], 
+					datasets: [
+						{ 
+							label: '語文素養', 
+							data: [77, 77, 77, 82, 80, 74, 83], 
+							borderColor: 'rgba(126, 110, 230, 0.5)', 
+							borderWidth: '1', 
+							backgroundColor: 'rgba(126, 110, 230, 0.5)' 
+						}
+					] 
+				}, 
+				options: { 
+					responsive: true, 
+					maintainAspectRatio: false, 
+					plugins: {
+						legend: { 
+							display: false, 
+							labels: { 
+								fontColor: '#FFF' 
+							} 
+						}, 
+						tooltip: { 
+							callbacks: { 
+								label: function (context) { 
+									return ' 平均：' + context.dataset.data[context.dataIndex] + ' 分'; 
+								} 
+							} 
+						} 
+					},
+					
+					scales: { 
+						r: {
+							max: 100, 
+							min: 0,
+							ticks: {
+								display: false,
+							},	
+						},
+					}, 
+				} 
+			});
+			var ctx4 = document.getElementById('polarAreaChart');
+			var myChart4 = new Chart(ctx4, { 
+				type: 'polarArea', 
+				data: { 
+					labels: ['立意取材', '結構組織', '遣詞造句', '錯別字標點'],
+					datasets: [
+						{ 
+							data: [4, 4, 4, 4], 
+							backgroundColor: ['#1753fc', ' #00b3ff', '#9258f1', '#fc0'], 
+							hoverBackgroundColor: ['#1753fc', ' #00b3ff', '#9258f1', '#fc0'], 
+							borderColor: 'transparent',
+						}
+					], 
+				}, 
+				options: { 
+					responsive: true, 
+					maintainAspectRatio: false, 
+					plugins: {
+						legend: { 
+							labels: { 
+								// color: '',
+							} 
+						}, 
+						tooltip: { 
+							callbacks: { 
+								label: function (context) { 
+									return ' ' + context.label + '：平均 ' + context.dataset.data[context.dataIndex] + ' 級分'; 
+								} 
+							} 
+						}
+					},
+					scales: { 
+						r: {
+							max: 6, 
+							min: 0,
+							ticks: {
+								display: false,
+							},
+						},
+					},
+				} 
+			});
+		});
+	</script>
+	<div class="row mb-5">
+		<div class="col-lg-6 col-md-12 mb-3">
+			<div class="card">
+				<div class="card-header">
+					<h3>同年齡(2000年)/同地區(高雄市)的人都考什麼等級</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="pieChart"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-12 mb-3">
+			<div class="card">
+				<div class="card-header">
+					<h3>同年齡(2000年)/同地區(高雄市)的人哪些等級取證率最高/最低</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="doughoutChart"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-12 mb-3">
+			<div class="card">
+				<div class="card-header">
+					<h3>同年齡(2000年)/同地區(高雄市)在語文素養面向表現最佳/最差</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="radarChart"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-12 mb-3">
+			<div class="card">
+				<div class="card-header">
+					<h3>同年齡(2000年)/同地區(高雄市)在寫作測驗面向表現最佳/最差</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="polarAreaChart"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 個人能力優劣 個人的能力面向分析 -->
+	
+	<script type="text/javascript">
+		$(function () { 
+			var C1 = liquidFillGaugeDefaultSettings(); 
+			C1.circleThickness = 0.15; C1.circleColor = '#295'; C1.textColor = '#4B7'; C1.waveTextColor = '#FFF'; C1.waveColor = '#5C8'; C1.textVertPosition = 0.75; C1.waveAnimateTime = 1000; C1.waveHeight = 0.05; C1.waveAnimate = true; C1.waveRise = false; C1.waveHeightScaling = false; C1.waveOffset = 0.25; C1.textSize = 0.75; C1.waveCount = 1; 
+			var C2 = liquidFillGaugeDefaultSettings(); 
+			C2.circleThickness = 0.15; C2.circleColor = '#EA2'; C2.textColor = '#FD0'; C2.waveTextColor = '#FFF'; C2.waveColor = '#FD0'; C2.textVertPosition = 0.75; C2.waveAnimateTime = 1000; C2.waveHeight = 0.05; C2.waveAnimate = true; C2.waveRise = false; C2.waveHeightScaling = false; C2.waveOffset = 0.25; C2.textSize = 0.75; C2.waveCount = 1; 
+			var C3 = liquidFillGaugeDefaultSettings(); 
+			C3.circleThickness = 0.15; C3.circleColor = '#F44'; C3.textColor = '#F99'; C3.waveTextColor = '#FFF'; C3.waveColor = '#F99'; C3.textVertPosition = 0.75; C3.waveAnimateTime = 1000; C3.waveHeight = 0.05; C3.waveAnimate = true; C3.waveRise = false; C3.waveHeightScaling = false; C3.waveOffset = 0.25; C3.textSize = 0.75; C3.waveCount = 1; 
+			var G0 = loadLiquidFillGauge('L0', 93.44, C1); 
+			var G1 = loadLiquidFillGauge('L1', 55.74, C2); 
+			var G2 = loadLiquidFillGauge('L2', 98.36, C1); 
+			var G3 = loadLiquidFillGauge('L3', 88.53, C1); 
+			var G4 = loadLiquidFillGauge('L4', 54.10, C2); 
+			var G5 = loadLiquidFillGauge('L5', 63.93, C2); 
+			var G6 = loadLiquidFillGauge('L6', 98.36, C1); 
+			var G7 = loadLiquidFillGauge('L7', 93.44, C1); 
+			var Z0 = loadLiquidFillGauge('W0', 98.36, C1); 
+			var Z1 = loadLiquidFillGauge('W1', 98.36, C1); 
+			var Z2 = loadLiquidFillGauge('W2', 98.36, C1); 
+			var Z3 = loadLiquidFillGauge('W3', 98.36, C1); 
+			var Z4 = loadLiquidFillGauge('W4', 98.36, C1); 
+		});
+	</script>
+	
+	<div class="row mb-5">
+		<div class="col-sm">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">你的語文素整體表現已贏過 93.44% 同年齡/同等級的考生</h3>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<h3 class="text-center">語文素養整體表現</h3>
+							<svg id="L0" width="100%" height="300">
+							</svg>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm mt-5">
+							<h3 class="text-center">文　　字</h3>
+							<svg id="L1" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">語　　詞</h3>
+							<svg id="L2" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">成語短語</h3>
+							<svg id="L3" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">造句標點</h3>
+							<svg id="L4" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">修辭技巧</h3>
+							<svg id="L5" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">語文知識</h3>
+							<svg id="L6" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">文意判讀</h3>
+							<svg id="L7" width="100%"></svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row mb-5">
+		<div class="col-sm">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">你的寫作測驗體表現已贏過 98.36% 同年齡/同等級的考生</h3>
+				</div>
+				<div class="card-body">
+					<div class="row">
+						<div class="col">
+							<h3 class="text-center">寫作測驗整體表現</h3>
+							<svg id="W0" width="100%" height="300"></svg>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm mt-5">
+							<h3 class="text-center">立意取材</h3>
+							<svg id="W1" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">結構組織</h3>
+							<svg id="W2" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">遣詞造句</h3>
+							<svg id="W3" width="100%"></svg>
+						</div>
+						<div class="col-sm mt-5">
+							<h3 class="text-center">錯別字標點</h3>
+							<svg id="W4" width="100%"></svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 特定考生情況 了解特定條件考生的情況-->
+	<script type="text/javascript">
+		$(function () {
+			var ctx = document.getElementById('Chart31');
+			var CBox1 = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: ['0-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70', '71-80', '81-90', '91-100'],
+					datasets: [
+						{
+							label: '組距範圍人數',
+							fill: true,
+							cubicInterpolationMode: 'monotone',
+							borderColor: 'rgba(126, 110, 230, 0.9)',
+							borderWidth: 1,
+							backgroundColor: 'rgba(126, 110, 230, 0.5)',
+							data: [4, 17, 65, 167, 621, 1824, 4451, 6785, 5298, 1387]
+						},
+						{
+							label: '贏過多少人數',
+							fill: true,
+							cubicInterpolationMode: 'monotone',
+							borderColor: 'rgba(230, 126, 34 ,0.9)',
+							borderWidth: 1,
+							backgroundColor: 'rgba(230, 126, 34, 0.7)',
+							pointHighlightStroke: 'rgba(230, 126, 34 ,1)',
+							data: [0, 0, 0, 0, 0, 0, 0, 0, 1645, 0]
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					interaction: {
+						intersect: false,
+						mode: 'index',
+					},
+				}
+			});
+			var ctx = document.getElementById('Chart32');
+			var CBox2 = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: ['1', '2', '3', '4', '5', '6'],
+					datasets: [
+						{
+							label: '組距範圍人數',
+							fill: true,
+							cubicInterpolationMode: 'monotone',
+							borderColor: 'rgba(126, 110, 230, 0.9)',
+							borderWidth: 1,
+							backgroundColor: 'rgba(126, 110, 230, 0.5)',
+							data: [39, 158, 2308, 13578, 4391, 145]
+						},
+						{
+							label: '贏過多少人數',
+							fill: true,
+							cubicInterpolationMode: 'monotone',
+							borderColor: 'rgba(230, 126, 34 ,0.9)',
+							borderWidth: 1,
+							backgroundColor: 'rgba(230, 126, 34, 0.7)',
+							pointHighlightStroke: 'rgba(230, 126, 34 ,1)',
+							data: [0, 0, 0, 0, 4391, 0]
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+				}
+			});
+		});
+	</script>
+	<div class="row mb-5">
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">語文素養 排名成績落點</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart31" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">寫作測驗 排名成績落點</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart32" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 能力變動情況 同等級考試紀錄與變動情況 -->
+	
+	<script type="text/javascript">
+		$(function () {
+			var ctx1 = document.getElementById('Chart41');
+			var myChart1 = new Chart(ctx1, {
+				type: 'line',
+				data: {
+					labels: ['2011-11-12', '2012-10-28'],
+					datasets: [
+						{
+							label: '語文素養',
+							data: [76, 88],
+							backgroundColor: 'transparent',
+							borderColor: '#69F',
+							borderWidth: 3,
+							pointStyle: 'circle',
+							// pointRadius: 5,
+							pointBackgroundColor: '#69F',
+							cubicInterpolationMode: 'monotone',
+						},
+						{
+							label: '文　　字',
+							data: [83.33, 100.00],
+							backgroundColor: 'transparent',
+							borderColor: '#F00',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							// pointRadius: 5,
+							pointBackgroundColor: '#F00',
+							cubicInterpolationMode: 'monotone',
+							hidden: true
+						},
+						{
+							label: '語　　詞',
+							data: [71.43, 71.43],
+							backgroundColor: 'transparent',
+							borderColor: '#FA0',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							// pointRadius: 5,
+							pointBackgroundColor: '#FA0',
+							cubicInterpolationMode: 'monotone',
+							hidden: true
+						},
+						{
+							label: '成語短語',
+							data: [100.00, 100.00],
+							backgroundColor: 'transparent',
+							borderColor: '#FF0',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							// pointRadius: 5,
+							pointBackgroundColor: '#FF0',
+							cubicInterpolationMode: 'monotone',
+							hidden: true
+						},
+						{
+							label: '造句標點',
+							data: [100.00, 83.33],
+							backgroundColor: 'transparent',
+							borderColor: '#080',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							// pointRadius: 5,
+							pointBackgroundColor: '#080',
+							cubicInterpolationMode: 'monotone',
+							hidden: true
+						},
+						{
+							label: '修辭技巧',
+							data: [57.14, 100.00],
+							backgroundColor: 'transparent',
+							borderColor: '#00F',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							// pointRadius: 5,
+							pointBackgroundColor: '#00F',
+							cubicInterpolationMode: 'monotone',
+							hidden: true
+						},
+						{
+							label: '語文知識',
+							data: [66.67, 100.00],
+							backgroundColor: 'transparent',
+							borderColor: '#72A',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							// pointRadius: 5,
+							pointBackgroundColor: '#72A',
+							cubicInterpolationMode: 'monotone',
+							hidden: true
+						},
+						{
+							label: '文意判讀',
+							data: [63.64, 72.73],
+							backgroundColor: 'transparent',
+							borderColor: '#B4B',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							// pointRadius: 5,
+							pointBackgroundColor: '#B4B',
+							cubicInterpolationMode: 'monotone',
+							hidden: true
+						}
+					]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					plugins: {
+						legend: {
+							display: true,
+							labels: {
+								usePointStyle: true,
+							}
+						},
+						tooltip: {
+							cornerRadius: 3,
+							titleFont: {
+								size: 13,
+							},
+							bodyFont: {
+								size: 13,
+							},
+						},
+					},
+					scales: {
+						x: {
+							display: true,
+							ticks: {
+							},
+							grid: {
+								display: false,
+								drawBorder: false
+							}
+						},
+						y: {
+							display: true,
+							suggestedMax: 100, 
+							suggestedMin: 0, 
+							grid: {
+								display: false,
+								drawBorder: false
+							}
+						}
+					}
+				}
+			});
+			var ctx2 = document.getElementById('Chart42');
+			var myChart2 = new Chart(ctx2, {
+				type: 'line',
+				data: {
+					labels: ['2011-11-12', '2012-10-28'], 
+					datasets: [
+						{ 
+							label: '寫作測驗', data: [4, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#69F', 
+							borderWidth: 3, 
+							pointStyle: 'circle', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#69F',
+							cubicInterpolationMode: 'monotone',
+						}, 
+						{ 
+							label: '立意取材', 
+							data: [5, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#F00', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBorderColor: 'transparent', 
+							pointBackgroundColor: '#F00',
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '結構組織', data: [4, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#FA0', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBorderColor: 'transparent', 
+							pointBackgroundColor: '#FA0', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '遣詞造句', 
+							data: [4, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#FF0', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBorderColor: 'transparent', 
+							pointBackgroundColor: '#FF0', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true }, 
+						{ 
+							label: '錯別字標點', 
+							data: [5, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#080', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBorderColor: 'transparent', 
+							pointBackgroundColor: '#080', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}
+					]
+				}, 
+				options: { 
+					responsive: true, 
+					maintainAspectRatio: false, 
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					plugins: {
+						tooltip: { 
+							cornerRadius: 3, 
+							titleFont: {
+								size: 13,
+							},
+							bodyFont: {
+								size: 13,
+							},
+							
+						}, 
+						legend: { 
+							display: true, 
+							labels: { 
+								usePointStyle: true, 
+							} 
+						}, 
+					},
+					scales: { 
+						x: { 
+							ticks: {}, 
+							grid: { 
+								display: false, 
+								drawBorder: false 
+							} 
+						}, 
+						y: {
+							display: true,  
+							suggestedMax: 6, 
+							suggestedMin: 0, 
+							grid: { 
+								display: false, 
+								drawBorder: false 
+							} 
+						} 
+					} 
+				}
+			});
+		});
+	</script>
+	<div class="row">
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">語文素養 同等級考試紀錄與變動情況</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart41" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">寫作測驗 同等級考試紀錄與變動情況</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart42" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 能力變動情況 多次應考不同等級時的考試紀錄 -->
+	<script type="text/javascript">
+		$(function () {
+			var ctx43 = document.getElementById('Chart43');
+			var myChart43 = new Chart(ctx43, {
+				type: 'line',
+				data: { 
+					labels: ['2011-11-12', '2012-10-28', '2013-07-07'],
+					datasets: [
+						{ 
+							label: '語文素養', 
+							data: [76, 88, 86], 
+							backgroundColor: 'transparent', 
+							borderColor: '#69F', 
+							borderWidth: 3, 
+							pointStyle: 'circle', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#69F',
+							cubicInterpolationMode: 'monotone',
+						}, 
+						{ 
+							label: '文　　字', 
+							data: [83.33, 100.00, 66.67], 
+							backgroundColor: 'transparent', 
+							borderColor: '#F00', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#F00', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true,
+						}, 
+						{ 
+							label: '語　　詞', 
+							data: [71.43, 71.43, 100.00],
+							backgroundColor: 'transparent', 
+							borderColor: '#FA0', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#FA0', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '成語短語', 
+							data: [100.00, 100.00, 85.71], 
+							backgroundColor: 'transparent', 
+							borderColor: '#FF0', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#FF0', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '造句標點', 
+							data: [100.00, 83.33, 83.33], 
+							backgroundColor: 'transparent', 
+							borderColor: '#080', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#080', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '修辭技巧', 
+							data: [57.14, 100.00, 71.43], 
+							backgroundColor: 'transparent', 
+							borderColor: '#00F', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#00F', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '語文知識', 
+							data: [66.67, 100.00, 100.00], 
+							backgroundColor: 'transparent', 
+							borderColor: '#72A', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#72A', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '文意判讀', 
+							data: [63.64, 72.73, 90.91], 
+							backgroundColor: 'transparent', 
+							borderColor: '#B4B', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#B4B', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}
+					]
+				}, 
+				options: { 
+					responsive: true, 
+					maintainAspectRatio: false, 
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					plugins: {
+						tooltip: { 
+							cornerRadius: 3, 
+							titleFont: {
+								size: 13,
+							},
+							bodyFont: {
+								size: 13,
+							},
+						}, 
+						legend: { 
+							display: true, 
+							labels: { 
+								usePointStyle: true, 
+							} 
+						}, 
+					},
+					scales: { 
+						x: { 
+								display: true, 
+								grid: { 
+									display: false, 
+									drawBorder: false 
+								} 
+							}, 
+						y: { 
+								display: true, 
+								suggestedMax: 100, 
+								suggestedMin: 0, 
+								grid: { 
+									display: false,
+									drawBorder: false 
+								} 
+							}
+					} 
+			} 
+			});
+
+			var ctx44 = document.getElementById('Chart44');
+			var myChart44 = new Chart(ctx44, {
+				type: 'line',
+				data: { 
+					labels: ['2011-11-12', '2012-10-28', '2013-07-07'],
+					datasets: [
+						{ 
+							label: '寫作測驗', 
+							data: [4, 5, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#69F', 
+							borderWidth: 3, 
+							pointStyle: 'circle', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#69F',
+							cubicInterpolationMode: 'monotone',
+						}, 
+						{ 
+							label: '立意取材',
+							data: [5, 5, 6], 
+							backgroundColor: 'transparent', 
+							borderColor: '#F00', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#F00', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '結構組織', 
+							data: [4, 5, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#FA0', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#FA0', 
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '遣詞造句', 
+							data: [4, 5, 6], 
+							backgroundColor: 'transparent', 
+							borderColor: '#FF0', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#FF0',					
+							cubicInterpolationMode: 'monotone',
+							hidden: true 
+						}, 
+						{ 
+							label: '錯別字標點', 
+							data: [5, 5, 5], 
+							backgroundColor: 'transparent', 
+							borderColor: '#080', 
+							borderWidth: 3, 
+							pointStyle: 'rectRounded', 
+							// pointRadius: 5, 
+							pointBackgroundColor: '#080', 
+							cubicInterpolationMode: 'monotone',	
+							hidden: true 
+						}
+					]
+				}, 
+				options: { 
+					responsive: true, 
+					maintainAspectRatio: false, 
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					plugins: {
+						tooltip: { 
+							cornerRadius: 3, 
+							titleFont: {
+								size: 13,
+							},
+							bodyFont: {
+								size: 13,
+							},
+						}, 
+						legend: { 
+							display: true, 
+							labels: { 
+								usePointStyle: true, 
+							} 
+						}, 
+					},
+					
+					scales: { 
+						x: { 
+							display: true, 
+							grid: { 
+								display: false, 
+								drawBorder: false 
+							} 
+						}, 
+						y: { 
+							
+							display: true,
+							suggestedMax: 6, 
+							suggestedMin: 0, 
+							grid: { 
+								display: false, 
+								drawBorder: false,
+								drawOnChartArea: true,
+							} 
+						} 
+					} 
+				} 
+			});
+
+			var ctx45 = document.getElementById('Chart45');
+			var myChart45 = new Chart(ctx45, {
+				type: 'line',
+				data: {
+					labels: ['語文得分', '文字', '語詞', '成語短語', '造句標點', '修辭技巧', '語文知識', '文意判讀'],
+					datasets: [
+						{
+							label: '自己',
+							data: [76, 84.44, 71.4, 100, 100, 57.14, 66.67, 63.64],
+							backgroundColor: 'transparent',
+							borderColor: '#69F',
+							borderWidth: 3,
+							pointStyle: 'circle',							
+							pointBackgroundColor: '#69F',
+							cubicInterpolationMode: 'monotone',
+						}, 
+						{
+							label: '常模',
+							data: [67, 63.21, 67.94, 71.57, 74.39, 68.87, 58.23, 68.46],
+							backgroundColor: 'transparent',
+							borderColor: '#FF0',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							pointBorderColor: 'transparent',
+							pointBackgroundColor: '#FF0',
+							cubicInterpolationMode: 'monotone',
+						}
+					]
+				},
+				options: { 
+					responsive: true, 
+					maintainAspectRatio: false, 
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					plugins: {
+						tooltip: { 
+							cornerRadius: 3, 
+							titleFont: {
+								size: 13,
+							},
+							bodyFont: {
+								size: 13,
+							},
+							
+						}, 
+						legend: { 
+							display: true, 
+							labels: { 
+								usePointStyle: true, 
+							} 
+						},	
+					},
+					
+					scales: { 
+						x: { 
+							display: true, 
+							grid: { 
+								display: false, 
+								drawBorder: false 
+							} 
+						},
+						y: { 
+							display: true, 
+							suggestedMax: 100,
+							suggestedMin: 0,
+							grid: { 
+								display: false, 
+								drawBorder: false 
+							} 
+						}
+					} 
+				}
+			});
+
+			var ctx46 = document.getElementById('Chart46');
+			var myChart46 = new Chart(ctx46, {
+				type: 'line',
+				data: {
+					labels: ['寫作級分', '立意取材', '結構組織', '遣詞造句', '錯別字標點'],
+					datasets: [
+						{
+							label: '自己',
+							data: [4, 5, 4, 4, 5],
+							backgroundColor: 'transparent',
+							borderColor: '#69F',
+							borderWidth: 3,
+							pointStyle: 'circle',							
+							pointBackgroundColor: '#69F',
+							cubicInterpolationMode: 'monotone',
+						}, 
+						{
+							label: '常模',
+							data: [3, 3, 3, 3, 4],
+							backgroundColor: 'transparent',
+							borderColor: '#FF0',
+							borderWidth: 3,
+							pointStyle: 'rectRounded',
+							pointBorderColor: 'transparent',
+							pointBackgroundColor: '#FF0',
+							cubicInterpolationMode: 'monotone',
+						}
+					]
+				},
+				options: { 
+					responsive: true, 
+					maintainAspectRatio: false, 
+					interaction: {
+						mode: 'index',
+						intersect: false,
+					},
+					plugins: {
+						tooltip: { 
+							cornerRadius: 3, 
+							titleFont: {
+								size: 13,
+							},
+							bodyFont: {
+								size: 13,
+							},
+							
+						}, 
+						legend: { 
+							display: true, 
+							labels: { 
+								usePointStyle: true, 
+							} 
+						},	
+					},
+					
+					scales: { 
+						x: { 
+							display: true, 
+							grid: { 
+								display: false, 
+								drawBorder: false 
+							} 
+						},
+						y: { 
+							display: true, 
+							suggestedMax: 6,
+							suggestedMin: 0,
+							grid: { 
+								display: false, 
+								drawBorder: false 
+							} 
+						}
+					} 
+				}
+			});
+
+
+		});
+	</script>
+	<div class="row">
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">語文素養 考試紀錄與變動情況</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart43" class="" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">寫作測驗 考試紀錄與變動情況</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart44" class="" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">語文素養 考試紀錄與年度常態模組比較情況</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart45" class="" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-12">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">寫作測驗 考試紀錄與年度常態模組比較情況</h3>
+				</div>
+				<div class="card-body">
+					<canvas id="Chart46" class="" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
