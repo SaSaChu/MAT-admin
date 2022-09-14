@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/icon.css">
 
@@ -301,7 +302,11 @@
                   <p class="card-text mb-0"><small class="text-muted">只統計取證梯次，不含其他專業梯次。</small></p>
                 </div>
                 <div class="card-body p-0 bg-white rounded-1">
-                  <img src="images/table01.png" class="img-fluid">
+				  <div class="row">
+					<div class="p-5">
+						<canvas id="lineChart1" height="200" style="width: 100%; height: 200px;"></canvas>
+					</div>
+				  </div>
                   <div class="row">
                     <div class="col-3 p-0 text-center">
                       <p class="lightBlue-bg py-2"><small class="text-muted">今年已取證總人次</small></p>
@@ -335,14 +340,72 @@
                   <div class="card border-0 mb-5">
                     <div class="card-header h5 bg-white py-3">語文素養通過率</div>
                     <div class="card-body">
-                      <img src="images/table02.png" class="img-fluid">
+                     	<!-- <img src="images/table02.png" class="img-fluid"> -->
+					  	<div class="row">
+							<div class="col-md-4 d-flex justify-content-center align-items-center">
+								<div class="mt-2 mb-2" data-value="0.80" data-thickness="10" data-color="#1753fc">
+									<div class="">
+										<div class="text-primary fs-2">71%</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="mb-5">
+									<h5 class="mb-2 d-flex justify-content-between">
+										<span class="fa fa-star fs-6"><b class="ms-3">284,387</b> 合格 - 66分 (含) 以上</span>
+										<span>71%</span>
+									</h5>
+									<div class="progress progress-md h-1">
+										<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 71%;"></div>
+									</div>
+								</div>
+								<div class="mb-0">
+									<h5 class="mb-2 d-flex justify-content-between">
+										<span class="fa fa-star fs-6"><b class="ms-3">114,152</b> 不合格</span>
+										<span class="">29%</span>
+									</h5>
+									<div class="progress progress-md h-1">
+										<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 29%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
                   </div>
 
                   <div class="card border-0">
                     <div class="card-header h5 bg-white py-3">寫作測驗通過率</div>
                     <div class="card-body">
-                      <img src="images/table03.png" class="img-fluid">
+                      <!-- <img src="images/table03.png" class="img-fluid"> -->
+						<div class="row">
+							<div class="col-md-4 d-flex justify-content-center align-items-center">
+								<div class="mt-2 mb-2" data-value="0.80" data-thickness="10" data-color="#1753fc">
+									<div class="">
+										<div class="text-primary fs-2">79%</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="mb-5">
+									<h5 class="mb-2 d-flex justify-content-between">
+										<span class="fa fa-star fs-6"><b class="ms-3">315,349</b> 合格 - 66分 (含) 以上</span>
+										<span>79%</span>
+									</h5>
+									<div class="progress progress-md h-1">
+										<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 79%;"></div>
+									</div>
+								</div>
+								<div class="mb-0">
+									<h5 class="mb-2 d-flex justify-content-between">
+										<span class="fa fa-star fs-6"><b class="ms-3">83,190</b> 不合格</span>
+										<span class="">21%</span>
+									</h5>
+									<div class="progress progress-md h-1">
+										<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 29%;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
                     </div>
                   </div>
                 </div>
@@ -424,7 +487,23 @@
                   <p class="card-text mb-0"><small class="text-muted">統計歷年各等級報考比例</small></p>
                 </div>
                 <div class="card-body bg-white rounded-1">
-                  <img src="images/table04.png" class="img-fluid">
+                  <!-- <img src="images/table04.png" class="img-fluid"> -->
+				  <div class="row">
+					<div class="col-xl-6 col-md-12">
+						<div class="card-body">
+							<h4 class="mb-4 text-center">報考比例</h4>
+							<div id="morrisBar" style="height: 250px;"></div>
+						</div>
+					</div>
+					<div class="col-xl-6 col-md-12">
+						<div class="card-body">
+							<h4 class="mb-4 text-center">報考比例</h4>
+							<div>
+								<canvas id="barChart1" height="250"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
                 </div>
               </div>
             </div>
@@ -448,8 +527,161 @@
 
     <script src="https://kit.fontawesome.com/25b2931f6f.js" crossorigin="anonymous"></script>
     <script language="javascript" type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	
     <script language="javascript" type="text/javascript" src="js/public.js"></script>
     <script src="js/app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(function() {
+			var ctxLineChart1 = $('#lineChart1');
+			var lineChart1 = new Chart(ctxLineChart1, {
+				type: 'line',
+				data: {
+					labels: ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],
+					datasets: [{
+						label: '考證人次',
+						data: [15913, 27766, 26859, 46234, 46210, 45393, 40347, 39741, 37508, 33109, 27262, 15200],
+						fill: true,
+						cubicInterpolationMode: 'monotone',
+						backgroundColor: 'rgba(0, 122, 255, 0.8)',
+						borderColor: 'rgba(0, 122, 255, 0.9)',
+						borderWidth: 0,
+						pointStyle: 'circle',
+						pointRadius: 0,
+						pointBorderColor: 'transparent',
+						pointBackgroundColor: 'rgba(0, 122, 255, 0.8)',
+					}]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					interaction: {
+						intersect: false,
+						mode: 'nearest',
+					},
+					plugins: {
+						title: {
+							display: false,
+							text: 'Normal Legend'
+						},
+						tooltip: {
+							titleFont: {
+								family: 'Montserrat',
+							},
+							bodyFont: {
+								family: 'Montserrat',
+							},
+							cornerRadius: 2,
+							intersect: false,
+						},
+						legend: {
+							display: false,
+							labels: {
+								usePointStyle: true,
+								font: {
+									family: 'Montserrat',
+								}
+							},
+						},
+					},	
+					scales: {
+						x: {
+							display: true,
+							ticks: {
+								color: '#546172',
+							},
+						},
+						y: {
+							display: true,
+							ticks: {
+								color: '#546172',
+							},
+							grid: {
+								display: false,
+							},
+						}
+					},
+				}
+			});
+
+			var ctxBarChart1 = $('#barChart1');
+
+			var barChart1 = new Chart(ctxBarChart1, {
+				type: 'bar',
+				data: {
+					labels: ['初等', '中等', '中高等'],
+					datasets: [{
+						label: '報考比例',
+						borderColor: 'transparent',
+						borderWidth: '4',
+						backgroundColor: 'rgba(0, 122, 255, 1.0)',
+						data: [21.06, 41.94, 37],
+					}]
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false,
+					hover: {
+						mode: 'nearest',
+						intersect: true
+					},
+					plugins: {
+						legend: {
+							display: false,
+							labels: {
+								color: '#546172',
+							},
+						},
+						
+						tooltip: {
+							mode: 'index',
+							intersect: false,
+						},
+					},
+					scales: {
+						x: {
+							display: true,
+							ticks: {
+								color: '#546172',
+							},
+							grid: {
+								display: true,
+							}
+						},
+						y: {
+							display: true,
+							suggestedMax: 100,
+							suggestedMin: 0,
+							ticks: {
+								color: '#546172',
+							},
+							grid: {
+								display: true,
+							}
+						}
+					},
+					
+				}
+			});
+
+			new Morris.Donut({
+				element: 'morrisBar',
+				data: [
+					{ value: 21.06, label: '初等' },
+					{ value: 41.94, label: '中等' },
+					{ value: 37, label: '中高等' }
+				],
+				// backgroundColor: '#293544',
+				backgroundColor: 'transparent',
+				labelColor: '#d3d8e2',
+				// colors: ['#1753fc ', '#9258f1', '#fdb901'],
+				colors: ['rgba(0, 122, 255, 1.0)', 'rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)'],
+				formatter: function (x) { return x + '%' }
+			});
+		});
+	</script>
   </body>
 </html>
