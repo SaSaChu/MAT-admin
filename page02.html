@@ -1,247 +1,349 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta http-equiv="Content-Language" content="zh-tw">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
 
-    <title>MAT測驗結果應用平台</title>
+<head>
+	<meta http-equiv="Content-Language" content="zh-tw">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/public.css">
-    <link rel="stylesheet" type="text/css" href="css/icon.css">
+	<title>MAT測驗結果應用平台</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-  </head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
 
-  <body class="lbg">
-    <div id="page-topbar">
-      <div class="navbar-header">
-        <div class="container-fluid cw90">
-          <div class="float-start">
-            <img src="images/logo.svg">
-          </div>
-          <div class="float-end">
-            <div class="d-inline-block me-3">
-              <span class="me-2">葉書昀</span>
-              <div class="userpic rounded-circle">
-                <img src="images/user-4.jpg">
-              </div>
-            </div>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+</head>
 
-            <div class="d-inline-block">
-              <button class="bg-primary rounded-circle h-icon">
-                <img src="images/logout.svg">
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+<body class="lbg">
+	<div id="page-topbar">
+		<div class="navbar-header">
+			<div class="container-fluid cw90">
+				<div class="float-start">
+					<img src="images/logo.svg">
+				</div>
+				<div class="float-end">
+					<div class="d-inline-block me-3">
+						<span class="me-2">葉書昀</span>
+						<div class="userpic rounded-circle">
+							<img src="images/user-4.jpg">
+						</div>
+					</div>
 
-      <div class="top-navigation">
-        <!-- 麵包屑 -->
-        <div class="page-title-content">
-          <div class="container-fluid cw90">
-            <div class="row">
-              <div class="col-6">
-                  <div class="page-title-box">
-                    <h4>個人能力優劣</h4>
-                    <ol class="breadcrumb m-0">
-                      <li class="breadcrumb-item"><a href="javascript: void(0);">首頁</a></li>
-                      <!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li> -->
-                      <li class="breadcrumb-item active">個人能力優劣</li>
-                      <li class="breadcrumb-item active">個人的能力面向分析</li>
-                    </ol>
-                  </div>
-              </div>
-              <div class="col-6 position-relative">
-                <img class='position-absolute header-pos' src="images/header-img.png">
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- 選單 -->
-        <div class="container-fluid cw90">
-          <div class="topnav">
-            <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-              <div class="collapse navbar-collapse row" id="topnav-menu-content">
-                <ul class="navbar-nav active">
-                  <!-- <li class="nav-item">
+					<div class="d-inline-block">
+						<button class="bg-primary rounded-circle h-icon">
+							<img src="images/logout.svg">
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="top-navigation">
+			<!-- 麵包屑 -->
+			<div class="page-title-content">
+				<div class="container-fluid cw90">
+					<div class="row">
+						<div class="col-6">
+							<div class="page-title-box">
+								<h4>個人能力優劣</h4>
+								<ol class="breadcrumb m-0">
+									<li class="breadcrumb-item"><a href="javascript: void(0);">首頁</a></li>
+									<!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li> -->
+									<li class="breadcrumb-item active">個人能力優劣</li>
+									<li class="breadcrumb-item active">個人的能力面向分析</li>
+								</ol>
+							</div>
+						</div>
+						<div class="col-6 position-relative">
+							<img class='position-absolute header-pos' src="images/header-img.png">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 選單 -->
+			<div class="container-fluid cw90">
+				<div class="topnav">
+					<nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+						<div class="collapse navbar-collapse row" id="topnav-menu-content">
+							<ul class="navbar-nav active">
+								<!-- <li class="nav-item">
                     <a class="nav-link" href="index.html">Dashboard</a>
                   </li> -->
 
-                  <!-- 01 個人能力位置 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon01"></i>個人能力位置
-                    </a>
+								<!-- 01 個人能力位置 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon01"></i>個人能力位置
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page01.html">團體相比的相對位置</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page01.html">團體相比的相對位置</a>
+									</div>
+								</li>
 
-                  <!-- 02 個人能力優劣 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon02"></i>個人能力優劣
-                    </a>
+								<!-- 02 個人能力優劣 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon02"></i>個人能力優劣
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page02.html">個人的能力面向分析</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page02.html">個人的能力面向分析</a>
+									</div>
+								</li>
 
-                  <!-- 03 特定考生情況 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon03"></i>特定考生情況
-                    </a>
+								<!-- 03 特定考生情況 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon03"></i>特定考生情況
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page03.html">了解特定條件考生的情況</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page03.html">了解特定條件考生的情況</a>
+									</div>
+								</li>
 
-                  <!-- 04 能力變動情況 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon04"></i>能力變動情況
-                    </a>
+								<!-- 04 能力變動情況 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon04"></i>能力變動情況
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page04.html">同等級考試紀錄與變動情況</a>
-                      <a class="dropdown-item" href="page05.html">多次應考不同等級時的考試紀錄</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page04.html">同等級考試紀錄與變動情況</a>
+										<a class="dropdown-item" href="page05.html">多次應考不同等級時的考試紀錄</a>
+									</div>
+								</li>
 
-                  <!-- 05 應考資料應用 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon05"></i>應考資料應用
-                    </a>
+								<!-- 05 應考資料應用 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon05"></i>應考資料應用
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page06.html">個人紀錄的儲存與查詢</a>
-                    </div>
-                  </li>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page06.html">個人紀錄的儲存與查詢</a>
+									</div>
+								</li>
 
-                  <!-- 06 -->
-                  <li class="nav-item col dropdown ">
-                    <a aria-expanded="false" aria-haspopup="true"
-                      class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
-                      id="topnav-email" role="button">
-                      <i class="icon-n-icon06"></i>個人寫作問題
-                    </a>
+								<!-- 06 -->
+								<li class="nav-item col dropdown ">
+									<a aria-expanded="false" aria-haspopup="true"
+										class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
+										id="topnav-email" role="button">
+										<i class="icon-n-icon06"></i>個人寫作問題
+									</a>
 
-                    <div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
-                      <a class="dropdown-item" href="page07.html">寫作方面的表現查詢</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
+									<div aria-labelledby="topnav-email" class="dropdown-menu dropdown-menu-left">
+										<a class="dropdown-item" href="page07.html">寫作方面的表現查詢</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="main-content">
-      <div class="page-content">
-        <div class="container-fluid cw90">
-          <!-- 下拉選單 -->
-          <div class="row">
-            <div class="col-12">
-              <p class="text-primary h4">檢測梯次</p>
-            </div>
-            <div class="col-12">
-              <form class="row g-4">
-                <div class="col">
-                  <select class="form-select form-select-lg" id="inputGroupSelect04" aria-label="Example select with button addon">
-                    <option selected>請選擇您要查驗的檢測梯次</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-                <div class="col-auto">
-                  <button class="btn bg-primary text-white btn-lg float-end" type="button">查詢</button>  
-                </div>
-              </form>
-            </div>
-          </div>
+	<div class="main-content">
+		<div class="page-content">
+			<div class="container-fluid cw90">
+				<!-- 下拉選單 -->
+				<div class="row">
+					<div class="col-12">
+						<p class="text-primary h4">檢測梯次</p>
+					</div>
+					<div class="col-12">
+						<form class="row g-4">
+							<div class="col">
+								<select class="form-select form-select-lg" id="inputGroupSelect04"
+									aria-label="Example select with button addon">
+									<option selected>請選擇您要查驗的檢測梯次</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+								</select>
+							</div>
+							<div class="col-auto">
+								<button class="btn bg-primary text-white btn-lg float-end" type="button">查詢</button>
+							</div>
+						</form>
+					</div>
+				</div>
 
-          <!-- 文字說明 -->
-          <div class="row my-5">
-            <div class="col-12">
-              <div class="gradient-bg rounded-1">
-                <p class="text-white fs-5 lh-base p-3 mb-0">
-                了解自己能力上的優缺點(個人的能力面向分析)。</br>
-                經由所選梯次來查詢你的語文素整體表現(包含七面向)以及你的寫作測驗體表現(包含四面向)。
-                </p>
-              </div>
-            </div>
-          </div>
+				<!-- 文字說明 -->
+				<div class="row my-5">
+					<div class="col-12">
+						<div class="gradient-bg rounded-1">
+							<p class="text-white fs-5 lh-base p-3 mb-0">
+								了解自己能力上的優缺點(個人的能力面向分析)。</br>
+								經由所選梯次來查詢你的語文素整體表現(包含七面向)以及你的寫作測驗體表現(包含四面向)。
+							</p>
+						</div>
+					</div>
+				</div>
 
-          <!-- 1＋2 -->
-          <div class="row mt-5">
-            <div class="col-12">
-              <div class="card h-100 bg-transparent border-0">
-                <div class="card-header bg-transparent border-0 mb-3">
-                  <p class="text-primary h4 be-bar">你的語文素整體表現已贏過 96.55% 同年齡/同等級的考生</p>
-                </div>
-                <div class="card-body bg-white rounded-1">
-                  <img src="images/table04.png" class="img-fluid">
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mt-5">
-              <div class="card h-100 bg-transparent border-0">
-                <div class="card-header bg-transparent border-0 mb-3">
-                  <p class="text-primary h4  be-bar">你的寫作測驗體表現已贏過 98.85% 同年齡/同等級的考生</p>
-                </div>
-                <div class="card-body bg-white rounded-1">
-                  <img src="images/table04.png" class="img-fluid">
-                </div>
-              </div>
-            </div>
-          </div>
+				<!-- 1＋2 -->
+				<div class="row mt-5">
+					<div class="col-12">
+						<div class="card h-100 bg-transparent border-0">
+							<div class="card-header bg-transparent border-0 mb-3">
+								<p class="text-primary h4 be-bar">你的語文素整體表現已贏過 96.55% 同年齡/同等級的考生</p>
+							</div>
+							<div class="card-body bg-white rounded-1 p-5">
+								<!-- <img src="images/table04.png" class="img-fluid"> -->
+								<div class="row">
+									<div class="col">
+										<h3 class="text-center">語文素養整體表現</h3>
+										<svg id="L0" width="100%" height="300">
+										</svg>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm mt-5">
+										<h3 class="text-center">文　　字</h3>
+										<svg id="L1" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">語　　詞</h3>
+										<svg id="L2" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">成語短語</h3>
+										<svg id="L3" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">造句標點</h3>
+										<svg id="L4" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">修辭技巧</h3>
+										<svg id="L5" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">語文知識</h3>
+										<svg id="L6" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">文意判讀</h3>
+										<svg id="L7" width="100%"></svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 mt-5">
+						<div class="card h-100 bg-transparent border-0">
+							<div class="card-header bg-transparent border-0 mb-3">
+								<p class="text-primary h4  be-bar">你的寫作測驗體表現已贏過 98.85% 同年齡/同等級的考生</p>
+							</div>
+							<div class="card-body bg-white rounded-1 p-5">
+								<!-- <img src="images/table04.png" class="img-fluid"> -->
+								<div class="row">
+									<div class="col">
+										<h3 class="text-center">寫作測驗整體表現</h3>
+										<svg id="W0" width="100%" height="300"></svg>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm mt-5">
+										<h3 class="text-center">立意取材</h3>
+										<svg id="W1" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">結構組織</h3>
+										<svg id="W2" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">遣詞造句</h3>
+										<svg id="W3" width="100%"></svg>
+									</div>
+									<div class="col-sm mt-5">
+										<h3 class="text-center">錯別字標點</h3>
+										<svg id="W4" width="100%"></svg>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-        </div>
-      </div>
-    </div>
+	<footer>
+		<small class="footer">
+			<span class="d-inline-block">中文能力測驗中心 版權所有</span>
+			©
+			<script>
+				document.write(new Date().getFullYear())
+			</script>
+			<span class="d-inline-block">Chinese Writing Test Center All rights reserved.</span>
+		</small>
+	</footer>
 
 
-    <footer>
-      <small class="footer">
-         <span class="d-inline-block">中文能力測驗中心 版權所有</span>
-        ©
-        <script>
-        document.write(new Date().getFullYear())
-        </script>
-        <span class="d-inline-block">Chinese Writing Test Center All rights reserved.</span>
-      </small>
-    </footer>
+	<script src="https://kit.fontawesome.com/25b2931f6f.js" crossorigin="anonymous"></script>
+	<script language="javascript" type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script language="javascript" type="text/javascript" src="js/public.js"></script>
+	<script src="js/app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.0.0/d3.min.js"></script>
+	<script src="https://www.cwt.org.tw/MATOLD/resources/js/liquidFillGauge.js"></script>
+	<script type="text/javascript">
+		$(function () { 
+			var C1 = liquidFillGaugeDefaultSettings();
+			
+			C1.circleThickness = 0.15; 
+			// 顏色修改 
+			C1.circleColor = '#295'; C1.textColor = '#4B7'; C1.waveTextColor = '#FFF'; C1.waveColor = '#5C8'; 
+			C1.textVertPosition = 0.75; C1.waveAnimateTime = 1000; C1.waveHeight = 0.05; C1.waveAnimate = true; C1.waveRise = false; C1.waveHeightScaling = false; C1.waveOffset = 0.25; C1.textSize = 0.75; C1.waveCount = 1; 
+			var C2 = liquidFillGaugeDefaultSettings(); 
+			C2.circleThickness = 0.15; 
+			// 顏色修改 
+			C2.circleColor = '#EA2'; C2.textColor = '#FD0'; C2.waveTextColor = '#FFF'; C2.waveColor = '#FD0'; 
+			C2.textVertPosition = 0.75; C2.waveAnimateTime = 1000; C2.waveHeight = 0.05; C2.waveAnimate = true; C2.waveRise = false; C2.waveHeightScaling = false; C2.waveOffset = 0.25; C2.textSize = 0.75; C2.waveCount = 1; 
+			var C3 = liquidFillGaugeDefaultSettings(); 
+			C3.circleThickness = 0.15;
+			// 顏色修改  
+			C3.circleColor = '#F44'; C3.textColor = '#F99'; C3.waveTextColor = '#FFF'; C3.waveColor = '#F99'; 
+			C3.textVertPosition = 0.75; C3.waveAnimateTime = 1000; C3.waveHeight = 0.05; C3.waveAnimate = true; C3.waveRise = false; C3.waveHeightScaling = false; C3.waveOffset = 0.25; C3.textSize = 0.75; C3.waveCount = 1; 
+			
+			var G0 = loadLiquidFillGauge('L0', 93.44, C1); 
+			var G1 = loadLiquidFillGauge('L1', 55.74, C2); 
+			var G2 = loadLiquidFillGauge('L2', 98.36, C1); 
+			var G3 = loadLiquidFillGauge('L3', 88.53, C1); 
+			var G4 = loadLiquidFillGauge('L4', 54.10, C2); 
+			var G5 = loadLiquidFillGauge('L5', 63.93, C2); 
+			var G6 = loadLiquidFillGauge('L6', 98.36, C1); 
+			var G7 = loadLiquidFillGauge('L7', 93.44, C1); 
+			var Z0 = loadLiquidFillGauge('W0', 98.36, C1); 
+			var Z1 = loadLiquidFillGauge('W1', 98.36, C1); 
+			var Z2 = loadLiquidFillGauge('W2', 98.36, C1); 
+			var Z3 = loadLiquidFillGauge('W3', 98.36, C1); 
+			var Z4 = loadLiquidFillGauge('W4', 98.36, C1); 
+		});
+	</script>
+</body>
 
-
-    <script src="https://kit.fontawesome.com/25b2931f6f.js" crossorigin="anonymous"></script>
-    <script language="javascript" type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/public.js"></script>
-    <script src="js/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-  </body>
 </html>
