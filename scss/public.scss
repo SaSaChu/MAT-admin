@@ -137,8 +137,12 @@ button {
 .page-title-content {
   padding: 35px 0;
 
-  @include range-width(0, 1000px) {
+  @include range-width(0, 450px) {
     padding: 20px 0 60px 0;
+  }
+
+  @include range-width(450px, 995px) {
+    padding: 20px 0;
   }
 
     .page-title-box {
@@ -169,10 +173,15 @@ button {
 
 .topnav {
   background-color: white;
-  // box-shadow: $box-shadow;
   z-index: 100;
   margin-bottom: -40px;
   border-radius: 3px;
+  -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .5), 0 3px 8px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .3), 0 3px 8px 0 rgba(0, 0, 0, .1);
+
+  @include range-width(0, 995px) {
+    display: none;
+  }
 
   .topnav-menu {
     margin: 0;
@@ -182,9 +191,8 @@ button {
     .nav-link {
       font-size: 1.2rem;
       position: relative;
-      padding: 1.2rem 1.5rem;
+      padding: 1rem 1.5rem;
       color: rgba(42, 50, 65, 1.00);
-      border-bottom: 2px solid rgba(255, 255, 255, 1.00);
       left: 10px;
 
       i {
@@ -258,9 +266,14 @@ button {
   bottom: -35px;
   right: 8px;
 
-  @include range-width(0, 1000px) {
-    max-width: 255px;
-    bottom: 6px;
+  @include range-width(0, 450px) {
+    max-width: 275px;
+    bottom: -61px;
+  }
+
+  @include range-width(450px, 995px) {
+    max-width: 330px;
+    bottom: -20px;
   }
 }
 
@@ -284,6 +297,40 @@ button {
   }
 }
 
+.h-img {
+  display: inline-block;
+  width: 100%;
+  max-width: 54px;
+
+  @include range-width(0, 450px) {
+    max-width: 20px;
+  }
+}
+
+.topimg {
+  display: inline-block;
+  width: 100%;
+  max-width: 194px;
+
+  @include range-width(0, 450px) {
+    max-width: 165px;
+  }
+}
+
+.m-menu-link {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0 10px 30px;
+  color: rgba(9, 33, 108, 1.00);
+  font-size: 1.3rem;
+  font-weight: normal;
+
+  &:hover, &:active {
+    color: rgba(243, 151, 0, 1.00);
+    text-decoration: none;
+  }
+}
+
 
 // main
 .main-content {
@@ -297,6 +344,14 @@ button {
 .page-content {
   margin-top: 110px;
   padding: calc(180px + 24px) calc(24px / 2) 60px calc(24px / 2);
+
+  @include range-width(0, 450px) {
+    margin-top: 10px;
+  }
+
+  @include range-width(450px, 995px) {
+    margin-top: -2px;
+  }
 }
 
 .footer {
@@ -354,11 +409,26 @@ button {
 }
 
 .h2 {
-  @include range-width(0, 1055px) {
+
+  @include range-width(0, 770px) {
+    font-size: calc(1rem + 0.9vw) !important;
+  }
+
+  @include range-width(770px, 875px) {
+    font-size: calc(1.15rem + 0.9vw) !important;
+  }
+
+  @include range-width(875px, 1055px) {
     font-size: calc(1.25rem + 0.9vw) !important;
   }
 }
 
+.table-striped > tbody > tr:nth-of-type(odd) {
+  --bs-table-accent-bg: #e7f0fd !important;
+}
 
+.table {
+  border-color: #9dbbd9 !important;
+}
 
 

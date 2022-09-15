@@ -24,10 +24,10 @@
 		<div class="navbar-header">
 			<div class="container-fluid cw90">
 				<div class="float-start">
-					<img src="images/logo.svg">
+					<img src="images/logo.png" class="topimg">
 				</div>
 				<div class="float-end">
-					<div class="d-inline-block me-3">
+					<div class="d-inline-block me-lg-3 me-2">
 						<span class="me-2">葉書昀</span>
 						<div class="userpic rounded-circle">
 							<img src="images/user-4.jpg">
@@ -39,8 +39,102 @@
 							<img src="images/logout.svg">
 						</button>
 					</div>
+
+					<div class="d-lg-none d-inline-block ms-2">
+						<button class="bg-primary rounded-circle h-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+							<img src="images/menu.svg">
+						</button>
+					</div>
 				</div>
 			</div>
+		</div>
+
+		<!-- 手機menu -->
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+		  <div class="offcanvas-header bg-primary">
+		    <h5 id="offcanvasRightLabel"><img src="images/TRA-logo.png"></h5>
+		    <button type="button" class="fs-1 icon-x text-white" style='background-color: transparent;' data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		  </div>
+		  <div class="offcanvas-body p-0">
+		    
+		  	<div class="accordion accordion-flush" id="accordionFlushExample">
+				  <div class="accordion-item">
+				    <h2 class="accordion-header" id="flush-headingOne">
+				      <button class="fs-4 text-primary accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+				        <i class="icon-n-icon01 me-3"></i>個人能力位置
+				      </button>
+				    </h2>
+				    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+				      <div class="accordion-body">
+				      	<a class='m-menu-link' href="page01.html">團體相比的相對位置</a>
+				      </div>
+				    </div>
+				  </div>
+
+				  <div class="accordion-item">
+				    <h2 class="accordion-header" id="flush-headingTwo">
+				      <button class="fs-4 text-primary accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+				        <i class="icon-n-icon02 me-3"></i>個人能力優劣
+				      </button>
+				    </h2>
+				    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+				      <div class="accordion-body">
+				      	<a class='m-menu-link' href="page02.html">個人的能力面向分析</a>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-item">
+				    <h2 class="accordion-header" id="flush-headingThree">
+				      <button class="fs-4 text-primary accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+				       <i class="icon-n-icon03 me-3"></i>特定考生情況
+				      </button>
+				    </h2>
+				    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+				      <div class="accordion-body">
+				      	<a class='m-menu-link' href="page03.html">了解特定條件考生的情況</a>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-item">
+				    <h2 class="accordion-header" id="flush-heading4">
+				      <button class="fs-4 text-primary accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+				       <i class="icon-n-icon04 me-3"></i>能力變動情況
+				      </button>
+				    </h2>
+				    <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4" data-bs-parent="#accordionFlushExample">
+				      <div class="accordion-body">
+				      	<a class='m-menu-link' href="page04.html">同等級考試紀錄與變動情況</a>
+				      	<a class='m-menu-link' href="page05.html">多次應考不同等級時的考試紀錄</a>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-item">
+				    <h2 class="accordion-header" id="flush-heading5">
+				      <button class="fs-4 text-primary accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+				       <i class="icon-n-icon05 me-3"></i>應考資料應用
+				      </button>
+				    </h2>
+				    <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5" data-bs-parent="#accordionFlushExample">
+				      <div class="accordion-body">
+				      	<a class='m-menu-link' href="page06.html">個人紀錄的儲存與查詢</a>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="accordion-item">
+				    <h2 class="accordion-header" id="flush-heading6">
+				      <button class="fs-4 text-primary accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse6" aria-expanded="false" aria-controls="flush-collapse6">
+				       <i class="icon-n-icon06 me-3"></i>個人寫作問題
+				      </button>
+				    </h2>
+				    <div id="flush-collapse6" class="accordion-collapse collapse" aria-labelledby="flush-heading6" data-bs-parent="#accordionFlushExample">
+				      <div class="accordion-body">
+				      	<a class='m-menu-link' href="page07.html">寫作方面的表現查詢</a>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+		  </div>
 		</div>
 
 		<div class="top-navigation">
@@ -48,18 +142,18 @@
 			<div class="page-title-content">
 				<div class="container-fluid cw90">
 					<div class="row">
-						<div class="col-6">
+						<div class="col-lg-6 col-12">
 							<div class="page-title-box">
-								<h4>個人能力優劣</h4>
+								<h4>同等級考試紀錄與變動情況</h4>
 								<ol class="breadcrumb m-0">
 									<li class="breadcrumb-item"><a href="javascript: void(0);">首頁</a></li>
 									<!-- <li class="breadcrumb-item"><a href="javascript: void(0);">Horizontal</a></li> -->
-									<li class="breadcrumb-item active">個人能力優劣</li>
-									<li class="breadcrumb-item active">個人的能力面向分析</li>
+									<li class="breadcrumb-item active">能力變動情況</li>
+									<li class="breadcrumb-item active">同等級考試紀錄與變動情況</li>
 								</ol>
 							</div>
 						</div>
-						<div class="col-6 position-relative">
+						<div class="col-lg-6 col-12 position-relative">
 							<img class='position-absolute header-pos' src="images/header-img.png">
 						</div>
 					</div>
@@ -72,10 +166,6 @@
 					<nav class="navbar navbar-light navbar-expand-lg topnav-menu">
 						<div class="collapse navbar-collapse row" id="topnav-menu-content">
 							<ul class="navbar-nav active">
-								<!-- <li class="nav-item">
-                    <a class="nav-link" href="index.html">Dashboard</a>
-                  </li> -->
-
 								<!-- 01 個人能力位置 -->
 								<li class="nav-item col dropdown ">
 									<a aria-expanded="false" aria-haspopup="true"
@@ -211,38 +301,38 @@
 								<!-- <img src="images/table04.png" class="img-fluid"> -->
 								<div class="row">
 									<div class="col">
-										<h3 class="text-center">語文素養整體表現</h3>
+										<h4 class="text-center">語文素養整體表現</h4>
 										<svg id="L0" width="100%" height="300">
 										</svg>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-sm mt-5">
-										<h3 class="text-center">文　　字</h3>
+										<h4 class="text-center">文　　字</h4>
 										<svg id="L1" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">語　　詞</h3>
+										<h4 class="text-center">語　　詞</h4>
 										<svg id="L2" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">成語短語</h3>
+										<h4 class="text-center">成語短語</h4>
 										<svg id="L3" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">造句標點</h3>
+										<h4 class="text-center">造句標點</h4>
 										<svg id="L4" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">修辭技巧</h3>
+										<h4 class="text-center">修辭技巧</h4>
 										<svg id="L5" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">語文知識</h3>
+										<h4 class="text-center">語文知識</h4>
 										<svg id="L6" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">文意判讀</h3>
+										<h4 class="text-center">文意判讀</h4>
 										<svg id="L7" width="100%"></svg>
 									</div>
 								</div>
@@ -258,25 +348,25 @@
 								<!-- <img src="images/table04.png" class="img-fluid"> -->
 								<div class="row">
 									<div class="col">
-										<h3 class="text-center">寫作測驗整體表現</h3>
+										<h4 class="text-center">寫作測驗整體表現</h4>
 										<svg id="W0" width="100%" height="300"></svg>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-sm mt-5">
-										<h3 class="text-center">立意取材</h3>
+										<h4 class="text-center">立意取材</h4>
 										<svg id="W1" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">結構組織</h3>
+										<h4 class="text-center">結構組織</h4>
 										<svg id="W2" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">遣詞造句</h3>
+										<h4 class="text-center">遣詞造句</h4>
 										<svg id="W3" width="100%"></svg>
 									</div>
 									<div class="col-sm mt-5">
-										<h3 class="text-center">錯別字標點</h3>
+										<h4 class="text-center">錯別字標點</h4>
 										<svg id="W4" width="100%"></svg>
 									</div>
 								</div>
@@ -316,12 +406,12 @@
 			
 			C1.circleThickness = 0.15; 
 			// 顏色修改 
-			C1.circleColor = '#295'; C1.textColor = '#4B7'; C1.waveTextColor = '#FFF'; C1.waveColor = '#5C8'; 
+			C1.circleColor = 'rgba(0, 122, 255, 1.0)'; C1.textColor = 'rgba(0, 122, 255, 1.0)'; C1.waveTextColor = '#FFF'; C1.waveColor = 'rgba(0, 122, 255, .5)'; 
 			C1.textVertPosition = 0.75; C1.waveAnimateTime = 1000; C1.waveHeight = 0.05; C1.waveAnimate = true; C1.waveRise = false; C1.waveHeightScaling = false; C1.waveOffset = 0.25; C1.textSize = 0.75; C1.waveCount = 1; 
 			var C2 = liquidFillGaugeDefaultSettings(); 
 			C2.circleThickness = 0.15; 
 			// 顏色修改 
-			C2.circleColor = '#EA2'; C2.textColor = '#FD0'; C2.waveTextColor = '#FFF'; C2.waveColor = '#FD0'; 
+			C2.circleColor = 'rgba(243, 151, 0, 1.00)'; C2.textColor = 'rgba(243, 151, 0, 1.00)'; C2.waveTextColor = '#FFF'; C2.waveColor = 'rgba(243, 151, 0, .8)'; 
 			C2.textVertPosition = 0.75; C2.waveAnimateTime = 1000; C2.waveHeight = 0.05; C2.waveAnimate = true; C2.waveRise = false; C2.waveHeightScaling = false; C2.waveOffset = 0.25; C2.textSize = 0.75; C2.waveCount = 1; 
 			var C3 = liquidFillGaugeDefaultSettings(); 
 			C3.circleThickness = 0.15;
