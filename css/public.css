@@ -3047,14 +3047,18 @@ button { outline: 0; border-width: 0; }
 .topnav .topnav-menu { margin: 0; padding: 0; }
 .topnav .navbar-nav .nav-link { font-size: 1.2rem; position: relative; padding: 1rem 1.5rem; color: #2a3241; left: 10px; }
 .topnav .navbar-nav .nav-link i { display: block; font-size: 1.6rem; text-align: center; color: #2a3241; }
-.topnav .navbar-nav .nav-link:focus, .topnav .navbar-nav .nav-link:hover { color: black; background-color: transparent; text-decoration: none; color: #2a3241; border-bottom: 2px solid #d89122; }
+.topnav .navbar-nav .nav-link:focus, .topnav .navbar-nav .nav-link:hover { color: black; background-color: transparent; text-decoration: none; color: #2a3241; }
 .topnav .navbar-nav .dropdown-item { color: #2a3241; padding: 5px 10px; }
 .topnav .navbar-nav .dropdown-item.active, .topnav .navbar-nav .dropdown-item:hover { color: #d89122; background: transparent; text-decoration: none; }
 .topnav .navbar-nav .nav-item { text-align: center; }
 .topnav .navbar-nav .nav-item .nav-link.active { color: black; }
+.topnav .navbar-nav .nav-item:last-child .nav-link { left: 0; }
+.topnav .navbar-nav .nav-item:last-child .dropdown-menu-left { margin-left: -10px; }
 .topnav .navbar-nav .dropdown { position: relative; }
 .topnav .navbar-nav .dropdown.active > a { color: black; background-color: transparent; }
-.topnav .navbar-nav .dropdown:hover .dropdown-menu { display: block; width: 100%; border: 0; font-size: 1.1rem; -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3), 0 3px 8px 0 rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3), 0 3px 8px 0 rgba(0, 0, 0, 0.1); }
+@media screen and (max-width: 1440px) and (min-width: 1025px) { .topnav .navbar-nav .dropdown:hover:nth-of-type(4) .dropdown-menu { width: auto; } }
+@media screen and (max-width: 1024px) and (min-width: 769px) { .topnav .navbar-nav .dropdown:hover:nth-of-type(3) .dropdown-menu, .topnav .navbar-nav .dropdown:hover:nth-of-type(4) .dropdown-menu { width: auto; } }
+.topnav .navbar-nav .dropdown:hover .dropdown-menu { display: block; width: 100%; border: 0; font-size: 1.1rem; -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3), 0 3px 8px 0 rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3), 0 3px 8px 0 rgba(0, 0, 0, 0.1); border-top: 2px solid #d89122; }
 .topnav .navbar-nav .dropdown:hover .dropdown-menu.dropdown-menu-left { left: 10px; }
 
 .header-pos { display: inline-block; width: 100%; max-width: 405px; bottom: -35px; right: 8px; }

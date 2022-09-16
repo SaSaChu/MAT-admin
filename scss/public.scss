@@ -207,7 +207,7 @@ button {
         background-color: transparent;
         text-decoration: none;
         color: rgba(42, 50, 65, 1.00);
-        border-bottom: 2px solid rgba(216, 145, 34, 1.00);
+        // border-bottom: 2px solid rgba(216, 145, 34, 1.00);
       }
     }
 
@@ -228,6 +228,17 @@ button {
       .nav-link.active {
         color: black;
       }
+
+      &:last-child {
+        .nav-link {
+          left: 0;
+        }
+
+        .dropdown-menu-left {
+          margin-left: -10px;
+          // left: 0 !important;
+        }
+      }
     }
 
     .dropdown {
@@ -242,6 +253,25 @@ button {
       }
 
       &:hover {
+        // .nav-link {
+        //   border-bottom: 2px solid rgba(216, 145, 34, 1.00);
+        // } 
+        @include range-width(1025px, 1441px) {
+          &:nth-of-type(4) {
+            .dropdown-menu {
+              width: auto;
+            }
+          }
+        }
+
+        @include range-width(769px, 1025px) {
+          &:nth-of-type(3), &:nth-of-type(4) {
+            .dropdown-menu {
+              width: auto;
+            }
+          }
+        }
+
         .dropdown-menu {
           display: block;
           width: 100%;
@@ -249,6 +279,7 @@ button {
           font-size: 1.1rem;
           -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .3), 0 3px 8px 0 rgba(0, 0, 0, .1);
           box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .3), 0 3px 8px 0 rgba(0, 0, 0, .1);
+          border-top: 2px solid rgba(216, 145, 34, 1.00);
 
           &.dropdown-menu-left {
             left: 10px;
