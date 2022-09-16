@@ -457,7 +457,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#F00',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5,
 							pointBackgroundColor: '#F00',
 							cubicInterpolationMode: 'monotone',
@@ -469,7 +469,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FA0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5,
 							pointBackgroundColor: '#FA0',
 							cubicInterpolationMode: 'monotone',
@@ -481,7 +481,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FF0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5,
 							pointBackgroundColor: '#FF0',
 							cubicInterpolationMode: 'monotone',
@@ -493,7 +493,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#080',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5,
 							pointBackgroundColor: '#080',
 							cubicInterpolationMode: 'monotone',
@@ -505,7 +505,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#00F',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5,
 							pointBackgroundColor: '#00F',
 							cubicInterpolationMode: 'monotone',
@@ -517,7 +517,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#72A',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5,
 							pointBackgroundColor: '#72A',
 							cubicInterpolationMode: 'monotone',
@@ -529,7 +529,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#B4B',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5,
 							pointBackgroundColor: '#B4B',
 							cubicInterpolationMode: 'monotone',
@@ -544,12 +544,16 @@
 						mode: 'index',
 						intersect: false,
 					},
+					
 					plugins: {
 						legend: {
 							display: true,
 							labels: {
 								usePointStyle: true,
-							}
+								font: {
+									// size: 10,
+								},
+							},
 						},
 						tooltip: {
 							cornerRadius: 3,
@@ -576,7 +580,6 @@
 							suggestedMax: 100,
 							suggestedMin: 0,
 							grid: {
-								display: false,
 								drawBorder: false
 							}
 						}
@@ -605,7 +608,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#F00',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBorderColor: 'transparent',
 							pointBackgroundColor: '#F00',
@@ -617,7 +620,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FA0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBorderColor: 'transparent',
 							pointBackgroundColor: '#FA0',
@@ -630,7 +633,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FF0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBorderColor: 'transparent',
 							pointBackgroundColor: '#FF0',
@@ -643,7 +646,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#080',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBorderColor: 'transparent',
 							pointBackgroundColor: '#080',
@@ -690,7 +693,6 @@
 							suggestedMax: 6,
 							suggestedMin: 0,
 							grid: {
-								display: false,
 								drawBorder: false
 							}
 						}

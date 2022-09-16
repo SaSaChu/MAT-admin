@@ -344,7 +344,7 @@
 											<td>4</td>
 											<td>4</td>
 											<td>5</td>
-											<td><button class="btn btn-success text-white" type="button">比較</button></td>
+											<td><button class="btn btn-success text-white compare" type="button">比較</button></td>
 										</tr>
 										<tr>
 											<th scope="row">2</th>
@@ -364,7 +364,7 @@
 											<td>4</td>
 											<td>4</td>
 											<td>5</td>
-											<td><button class="btn btn-success text-white" type="button">比較</button></td>
+											<td><button class="btn btn-success text-white compare" type="button">比較</button></td>
 										</tr>
 										<tr>
 											<th scope="row">3</th>
@@ -384,7 +384,7 @@
 											<td>4</td>
 											<td>4</td>
 											<td>5</td>
-											<td><button class="btn btn-success text-white" type="button">比較</button></td>
+											<td><button class="btn btn-success text-white compare" type="button">比較</button></td>
 										</tr>
 									</tbody>
 								</table>
@@ -394,7 +394,7 @@
 				</div>
 
 				<!-- 比較按鈕出現 -->
-				<div class="row mt-5">
+				<div id="compareBox" class="row mt-5" style="display:none;">
 					<div class="col-6">
 						<div class="card h-100 bg-transparent border-0">
 							<div class="card-header bg-transparent border-0 mb-3">
@@ -445,6 +445,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 	<script type="text/javascript">
 		$(function () {
+
 			var ctx43 = document.getElementById('Chart43');
 			var Chart43 = new Chart(ctx43, {
 				type: 'line',
@@ -468,7 +469,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#F00',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#F00',
 							cubicInterpolationMode: 'monotone',
@@ -480,7 +481,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FA0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#FA0',
 							cubicInterpolationMode: 'monotone',
@@ -492,7 +493,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FF0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#FF0',
 							cubicInterpolationMode: 'monotone',
@@ -504,7 +505,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#080',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#080',
 							cubicInterpolationMode: 'monotone',
@@ -516,7 +517,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#00F',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#00F',
 							cubicInterpolationMode: 'monotone',
@@ -528,7 +529,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#72A',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#72A',
 							cubicInterpolationMode: 'monotone',
@@ -540,7 +541,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#B4B',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#B4B',
 							cubicInterpolationMode: 'monotone',
@@ -585,7 +586,6 @@
 							suggestedMax: 100,
 							suggestedMin: 0,
 							grid: {
-								display: false,
 								drawBorder: false
 							}
 						}
@@ -616,7 +616,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#F00',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#F00',
 							cubicInterpolationMode: 'monotone',
@@ -628,7 +628,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FA0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#FA0',
 							cubicInterpolationMode: 'monotone',
@@ -640,7 +640,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#FF0',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#FF0',
 							cubicInterpolationMode: 'monotone',
@@ -652,7 +652,7 @@
 							backgroundColor: 'transparent',
 							borderColor: '#080',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							// pointRadius: 5, 
 							pointBackgroundColor: '#080',
 							cubicInterpolationMode: 'monotone',
@@ -699,7 +699,6 @@
 							suggestedMax: 6,
 							suggestedMin: 0,
 							grid: {
-								display: false,
 								drawBorder: false,
 								drawOnChartArea: true,
 							}
@@ -708,84 +707,85 @@
 				}
 			});
 
-			var ctx45 = document.getElementById('Chart45');
-			var Chart45 = new Chart(ctx45, {
-				type: 'line',
-				data: {
-					labels: ['語文得分', '文字', '語詞', '成語短語', '造句標點', '修辭技巧', '語文知識', '文意判讀'],
-					datasets: [
-						{
-							label: '自己',
-							data: [76, 84.44, 71.4, 100, 100, 57.14, 66.67, 63.64],
-							backgroundColor: 'transparent',
-							borderColor: 'rgba(0, 122, 255, 1.0)',
-							borderWidth: 3,
-							pointStyle: 'circle',
-							pointBackgroundColor: 'rgba(0, 122, 255, 1.0)',
-							cubicInterpolationMode: 'monotone',
-						},
-						{
-							label: '常模',
-							data: [67, 63.21, 67.94, 71.57, 74.39, 68.87, 58.23, 68.46],
-							backgroundColor: 'transparent',
-							borderColor: 'rgba(122, 111, 187, 1.00)',
-							borderWidth: 3,
-							pointStyle: 'rectRounded',
-							pointBorderColor: 'transparent',
-							pointBackgroundColor: 'rgba(122, 111, 187, 1.00)',
-							cubicInterpolationMode: 'monotone',
-						}
-					]
-				},
-				options: {
-					responsive: true,
-					maintainAspectRatio: false,
-					interaction: {
-						mode: 'index',
-						intersect: false,
-					},
-					plugins: {
-						tooltip: {
-							cornerRadius: 3,
-							titleFont: {
-								size: 13,
+			$(".compare").click(function() {
+				$('#compareBox').fadeIn()
+				var ctx45 = document.getElementById('Chart45');
+				var Chart45 = new Chart(ctx45, {
+					type: 'line',
+					data: {
+						labels: ['語文得分', '文字', '語詞', '成語短語', '造句標點', '修辭技巧', '語文知識', '文意判讀'],
+						datasets: [
+							{
+								label: '自己',
+								data: [76, 84.44, 71.4, 100, 100, 57.14, 66.67, 63.64],
+								backgroundColor: 'transparent',
+								borderColor: 'rgba(0, 122, 255, 1.0)',
+								borderWidth: 3,
+								pointStyle: 'circle',
+								pointBackgroundColor: 'rgba(0, 122, 255, 1.0)',
+								cubicInterpolationMode: 'monotone',
 							},
-							bodyFont: {
-								size: 13,
-							},
-
-						},
-						legend: {
-							display: true,
-							labels: {
-								usePointStyle: true,
+							{
+								label: '常模',
+								data: [67, 63.21, 67.94, 71.57, 74.39, 68.87, 58.23, 68.46],
+								backgroundColor: 'transparent',
+								borderColor: 'rgba(122, 111, 187, 1.00)',
+								borderWidth: 3,
+								pointStyle: 'circle',
+								pointBorderColor: 'transparent',
+								pointBackgroundColor: 'rgba(122, 111, 187, 1.00)',
+								cubicInterpolationMode: 'monotone',
 							}
-						},
+						]
 					},
-
-					scales: {
-						x: {
-							display: true,
-							grid: {
-								display: false,
-								drawBorder: false
-							}
+					options: {
+						responsive: true,
+						maintainAspectRatio: false,
+						interaction: {
+							mode: 'index',
+							intersect: false,
 						},
-						y: {
-							display: true,
-							suggestedMax: 100,
-							suggestedMin: 0,
-							grid: {
-								display: false,
-								drawBorder: false
+						plugins: {
+							tooltip: {
+								cornerRadius: 3,
+								titleFont: {
+									size: 13,
+								},
+								bodyFont: {
+									size: 13,
+								},
+
+							},
+							legend: {
+								display: true,
+								labels: {
+									usePointStyle: true,
+								}
+							},
+						},
+
+						scales: {
+							x: {
+								display: true,
+								grid: {
+									display: false,
+									drawBorder: false
+								}
+							},
+							y: {
+								display: true,
+								suggestedMax: 100,
+								suggestedMin: 0,
+								grid: {
+									drawBorder: false
+								}
 							}
 						}
 					}
-				}
-			});
+				});
 
-			var ctx46 = document.getElementById('Chart46');
-			var Chart46 = new Chart(ctx46, {
+				var ctx46 = document.getElementById('Chart46');
+				var Chart46 = new Chart(ctx46, {
 				type: 'line',
 				data: {
 					labels: ['寫作級分', '立意取材', '結構組織', '遣詞造句', '錯別字標點'],
@@ -806,7 +806,7 @@
 							backgroundColor: 'transparent',
 							borderColor: 'rgba(122, 111, 187, 1.00)',
 							borderWidth: 3,
-							pointStyle: 'rectRounded',
+							pointStyle: 'circle',
 							pointBorderColor: 'transparent',
 							pointBackgroundColor: 'rgba(122, 111, 187, 1.00)',
 							cubicInterpolationMode: 'monotone',
@@ -852,12 +852,14 @@
 							suggestedMax: 6,
 							suggestedMin: 0,
 							grid: {
-								display: false,
 								drawBorder: false
 							}
 						}
 					}
 				}
+			});
+
+				$("html, body").animate({ scrollTop: $(document).height() })
 			});
 		});
 	</script>

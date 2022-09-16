@@ -595,7 +595,7 @@
 									<div class="col-xl-6 col-md-12">
 										<div class="card-body">
 											<h4 class="mb-4 text-center">報考比例</h4>
-											<div id="morrisBar" style="height: 300px;"></div>
+											<div id="morrisBar" style="height: 290px;"></div>
 										</div>
 									</div>
 									<div class="col-xl-6 col-md-12">
@@ -780,13 +780,16 @@
 					{ value: 41.94, label: '中等' },
 					{ value: 37, label: '中高等' }
 				],
-				// backgroundColor: '#293544',
 				backgroundColor: 'transparent',
 				labelColor: '#d3d8e2',
 				// colors: ['#1753fc ', '#9258f1', '#fdb901'],
 				colors: ['rgba(0, 122, 255, 1.0)', 'rgba(122, 111, 187, 1.00)', 'rgba(241, 113, 4, 1.00)'],
+				resize: true,
 				formatter: function (x) { return x + '%' }
 			});
+
+			
+			
 		});
 	</script>
 </body>
