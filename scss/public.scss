@@ -383,6 +383,13 @@ button {
   @include range-width(450px, 995px) {
     margin-top: -2px;
   }
+
+  .col {
+    @include range-width(0, 451px) {
+      flex: 0 0 50%;
+      padding: 1rem;
+    }
+  }
 }
 
 .footer {

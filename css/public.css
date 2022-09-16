@@ -3084,6 +3084,7 @@ button { outline: 0; border-width: 0; }
 .page-content { margin-top: 110px; padding: calc(180px + 24px) calc(24px / 2) 60px calc(24px / 2); }
 @media screen and (max-width: 449px) and (min-width: 0) { .page-content { margin-top: 10px; } }
 @media screen and (max-width: 994px) and (min-width: 450px) { .page-content { margin-top: -2px; } }
+@media screen and (max-width: 450px) and (min-width: 0) { .page-content .col { flex: 0 0 50%; padding: 1rem; } }
 
 .footer { display: inline-block; width: 100%; background-color: #09216C; padding: 20px calc(24px / 2); text-align: center; color: white; height: 60px; }
 
